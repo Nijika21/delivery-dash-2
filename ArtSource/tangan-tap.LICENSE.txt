@@ -1,0 +1,5 @@
+tangan-tap.svg (dan Assets/UI/Art/Ikon/tap.png) diadaptasi dari Twemoji 1f446 "backhand index pointing up".
+Copyright 2019 Twitter, Inc and other contributors; grafis dilisensikan CC-BY 4.0:
+https://creativecommons.org/licenses/by/4.0/  (sumber: https://github.com/jdecked/twemoji)
+Perubahan: warna putih, garis lipatan jari abu-abu, jari dan jempol dipendekkan, garis tepi gelap.
+Kredit tampil di layar Cerita dan kredit (KidFriendlyHud.AddGuideCredit).

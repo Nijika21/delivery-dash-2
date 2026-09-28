@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 26. Lobby 1.0 (pintu Classic) (portrait 720x1280) — dibangkitkan dari Design/d4, jangan disunting tangan.
+     ID inventaris: K11 M08
+     Catatan: Lobby baru versi 1.0: Mulai dan Keluar. Dari 2.0, Keluar kembali ke lobby 2.0. Portrait: usulan minta putar layar. -->
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../Styles/DeliveryDash.uss" />
+    <ui:VisualElement name="layar" class="sc sc--p" picking-mode="Ignore">
+        <ui:VisualElement name="classic" class="sc-fill sc-classic" picking-mode="Ignore" />
+        <ui:VisualElement name="ground" class="sc-classic__ground" style="height: 520px" picking-mode="Ignore" />
+        <ui:VisualElement name="road" class="sc-classic__road" style="top: 900px; height: 120px" picking-mode="Ignore" />
+        <ui:VisualElement name="scrim" class="sc-fill dd-scrim">
+            <ui:VisualElement name="@grup" class="sc-col" style="align-items: center; width: 560px" picking-mode="Ignore">
+                <ui:VisualElement name="ikon-rotate" class="ikon ikon--i-rotate" picking-mode="Ignore" />
+                <ui:Label name="title" class="sc-title sc-on-dark mt-24" style="-unity-text-align: upper-center" text="Putar HP ke samping" picking-mode="Ignore" />
+                <ui:Label name="body-l" class="sc-body-l mt-12" style="color: #E3ECEE; -unity-text-align: upper-center" text="Classic dimainkan mendatar, sama seperti versi pertama." picking-mode="Ignore" />
+                <ui:VisualElement name="btn:kembali-ke-lobby" class="dd-btn dd-btn--quiet" style="margin-top: 36px">
+                    <ui:VisualElement name="ikon-back" class="dd-btn__icon ikon ikon--i-back" picking-mode="Ignore" />
+                    <ui:Label name="teks" text="Kembali ke lobby" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

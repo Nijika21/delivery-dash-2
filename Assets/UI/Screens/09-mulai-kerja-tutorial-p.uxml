@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 09. Mulai kerja (tutorial) (portrait 720x1280) — dibangkitkan dari Design/d4, jangan disunting tangan.
+     ID inventaris: G01 G03 D02 D06 D09 F02 F10
+     Catatan: Truk mulai di parkiran depot. Portrait: petunjuk joystick hanya di sesi pertama. PC: tombol sentuh diganti baris petunjuk keyboard "W gas · S rem / tahan untuk mundur · A / D belok · Esc jeda". -->
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../Styles/DeliveryDash.uss" />
+    <ui:VisualElement name="layar" class="sc sc--p" picking-mode="Ignore">
+        <!-- dunia: digambar kamera game, bukan UI (acuan: a-w-mulai-p) -->
+        <ui:VisualElement name="@hudbar" class="sc-abs" style="left: 20px; top: 20px; width: 596px" picking-mode="Ignore">
+            <ui:VisualElement name="hudbar" class="dd-hudbar" style="width: 100%" picking-mode="Ignore">
+                <ui:VisualElement name="hud-dest" class="sc-bg sc-hud-dest a-zona-paket" picking-mode="Ignore" />
+                <ui:Label name="text" class="dd-hudbar__text" text="Ambil paket di gudang" picking-mode="Ignore" />
+                <ui:Label name="dist" class="dd-hudbar__dist dd-hudbar__dist--orange" text="6 m" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@iconbtn:pause" class="sc-abs" style="right: 20px; top: 16px" picking-mode="Ignore">
+            <ui:VisualElement name="iconbtn:pause" class="dd-iconbtn">
+                <ui:VisualElement name="ikon-pause" class="dd-iconbtn__glyph ikon ikon--i-pause" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@chips" class="sc-abs" style="left: 20px; top: 104px" picking-mode="Ignore">
+            <ui:VisualElement name="chips" class="sc-chips" picking-mode="Ignore">
+                <ui:VisualElement name="coins" class="dd-coins" picking-mode="Ignore">
+                    <ui:VisualElement name="ikon-coin" class="dd-coins__icon ikon ikon--i-coin" picking-mode="Ignore" />
+                    <ui:Label name="teks" text="312" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="mini" class="sc-mini" style="right: 20px; top: 104px; width: 188px; height: 191px">
+            <ui:VisualElement name="map" class="sc-mini__map sc-bg a-mini-kp" style="left: -232.6px; top: -405.7px; width: 960px; height: 960px" picking-mode="Ignore" />
+            <ui:VisualElement name="peta-overlay" class="sc-mini__overlay runtime runtime--peta-overlay" picking-mode="Ignore" tooltip="Digambar saat berjalan: titik rute, penanda tujuan, dan panah truk di atas gambar minimap (DeliveryMinimap)." />
+            <ui:VisualElement name="hint" class="sc-mini__hint" picking-mode="Ignore">
+                <ui:VisualElement name="ikon-expand" class="sc-mini__hint-glyph ikon ikon--i-expand" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@msg" class="sc-abs sc-row" style="left: 20px; right: 20px; top: 312px; justify-content: center; align-items: center" picking-mode="Ignore">
+            <ui:VisualElement name="msg" class="dd-msg" picking-mode="Ignore">
+                <ui:VisualElement name="badge" class="dd-msg__badge" picking-mode="Ignore">
+                    <ui:VisualElement name="ikon-info" class="dd-msg__glyph ikon ikon--i-info" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Label name="teks" text="Yuk belajar! Berhenti di kotak jingga depan gudang untuk mengambil paket." picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="joy" class="sc-abs sc-joy" style="left: 92px; top: 922px" picking-mode="Ignore">
+            <ui:VisualElement name="knob" class="sc-joy__knob" style="left: 41px; top: 1px" picking-mode="Ignore" />
+        </ui:VisualElement>
+        <ui:VisualElement name="coach:sentuh-di-bawah" class="sc-abs sc-coach" style="left: 40px; top: 860px" picking-mode="Ignore">
+            <ui:VisualElement name="ikon-play" class="sc-coach__glyph ikon ikon--i-play" picking-mode="Ignore" />
+            <ui:Label name="teks" text="Sentuh di bawah sini, geser ke arah tujuan" picking-mode="Ignore" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

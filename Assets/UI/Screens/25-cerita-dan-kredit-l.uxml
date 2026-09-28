@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 25. Cerita dan kredit (landscape 1280x720) — dibangkitkan dari Design/d4, jangan disunting tangan.
+     ID inventaris: A11 J09 M09 M10
+     Catatan: Dibuka dari tombol ? di lobby. Cerita anonim; kredit dan lisensi di bagian bawah area gulir. -->
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../Styles/DeliveryDash.uss" />
+    <ui:VisualElement name="layar" class="sc sc--l" picking-mode="Ignore">
+        <!-- dunia: digambar kamera game, bukan UI (acuan: a-w-lobi-l) -->
+        <ui:VisualElement name="dim" class="sc-fill sc-dim" picking-mode="Ignore" />
+        <ui:VisualElement name="story" class="sc-abs sc-story" style="left: 140px; top: 32px; width: 1000px; height: 656px" picking-mode="Ignore">
+            <ui:VisualElement name="@grup" class="sc-row" picking-mode="Ignore">
+                <ui:Label name="title" class="sc-title sc-grow" style="font-size: 40px" text="Cerita di balik Delivery Dash" picking-mode="Ignore" />
+                <ui:VisualElement name="iconbtn:close" class="dd-iconbtn dd-iconbtn--close">
+                    <ui:VisualElement name="ikon-close" class="dd-iconbtn__glyph ikon ikon--i-close" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:ScrollView name="body" class="sc-story__body sc-story__scroll" mode="Vertical" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Auto" touch-scroll-type="Clamped">
+                <ui:Label name="p-1" class="sc-story__p" text="Delivery Dash adalah proyek game pribadi tentang mengantar paket di sebuah kota kecil." picking-mode="Ignore" />
+                <ui:Label name="p-2" class="sc-story__p" text="Game ini berawal dari bootcamp pengembangan game pada 19 November 2025. Proyeknya sempat dikerjakan sebagian, lalu berhenti cukup lama. Pengembangannya dilanjutkan perlahan pada 1 Juni 2026." picking-mode="Ignore" />
+                <ui:Label name="p-3" class="sc-story__p" text="Keinginannya sederhana: membuat permainan mengantar paket yang bisa dinikmati tanpa terganggu iklan. Dari proyek belajar sederhana, game ini dikembangkan lagi agar bisa dimainkan di HP dan dibagikan kepada teman-teman." picking-mode="Ignore" />
+                <ui:Label name="p-4" class="sc-story__p" text="Semoga setiap perjalanan kecil di kota ini membawa kesenangan." picking-mode="Ignore" />
+                <ui:Label name="p-5" class="sc-story__p" text="Terima kasih sudah bermain.&#10;Pengembang Delivery Dash" picking-mode="Ignore" />
+                <ui:Label name="h" class="sc-story__h" text="Kredit" picking-mode="Ignore" />
+                <ui:Label name="small-1" class="sc-story__small" text="Huruf Fredoka dan Andika, lisensi SIL Open Font License." picking-mode="Ignore" />
+                <ui:Label name="small-2" class="sc-story__small" text="Truk, paket, pohon, dan semak dari aset tutorial asli." picking-mode="Ignore" />
+                <ui:Label name="small-3" class="sc-story__small" text="Rumah, properti, skin, dan tampilan digambar untuk Delivery Dash 2." picking-mode="Ignore" />
+                <ui:Label name="small-4" class="sc-story__small" text="Versi 2.0.0" picking-mode="Ignore" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

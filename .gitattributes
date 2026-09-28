@@ -1,0 +1,14 @@
+# Semua teks proyek memakai LF (sesuai file yang ada); menimpa core.autocrlf global.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.psd binary
+*.ttf binary
+*.otf binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.bytes binary
+*.pdf binary

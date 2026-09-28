@@ -1,0 +1,1072 @@
+{
+ "catatan": "Satu sumber untuk pemutar gerak C# dan halaman demo. Lihat komentar di Tools/handoff/motion.mjs untuk arti kolom.",
+ "easing": {
+  "linear": {
+   "uss": "linear",
+   "cs": "Linear",
+   "css": "linear"
+  },
+  "ease": {
+   "uss": "ease",
+   "cs": null,
+   "css": "ease",
+   "catatan": "hanya untuk transisi USS (tekan tombol), tidak dipakai di C#"
+  },
+  "ease-out": {
+   "uss": "ease-out",
+   "cs": null,
+   "css": "ease-out",
+   "catatan": "hanya untuk transisi USS (sakelar)"
+  },
+  "out-cubic": {
+   "uss": "ease-out-cubic",
+   "cs": "OutCubic",
+   "css": "cubic-bezier(.33,1,.68,1)"
+  },
+  "in-cubic": {
+   "uss": "ease-in-cubic",
+   "cs": "InCubic",
+   "css": "cubic-bezier(.32,0,.67,0)"
+  },
+  "in-out-sine": {
+   "uss": "ease-in-out-sine",
+   "cs": "InOutSine",
+   "css": "cubic-bezier(.37,0,.63,1)"
+  },
+  "out-sine": {
+   "uss": "ease-out-sine",
+   "cs": "OutSine",
+   "css": "cubic-bezier(.61,1,.88,1)"
+  },
+  "in-sine": {
+   "uss": "ease-in-sine",
+   "cs": "InSine",
+   "css": "cubic-bezier(.12,0,.39,0)"
+  },
+  "out-back": {
+   "uss": "ease-out-back",
+   "cs": "OutBack",
+   "css": "cubic-bezier(.34,1.56,.64,1)",
+   "catatan": "overshoot 1.70158 (Penner)"
+  }
+ },
+ "gerak": [
+  {
+   "id": "tekan-3d",
+   "nama": "Tombol ditekan (pola 3D)",
+   "lapisan": "uss",
+   "durasi": 80,
+   "easing": "ease",
+   "target": ".dd-btn .dd-iconbtn .sc-play .sc-side__btn .sc-modebtn .sc-tile .sc-mapcard .dd-skin .sc-ctl",
+   "pemicu": "Penunjuk ditahan (:active) atau kelas .is-pressed (tombol tahan GAS/REM/kiri/kanan). Lepas = kembali dengan transisi yang sama.",
+   "rincian": "Permukaan turun (tepi bawah − 2) px, tepi bawah jadi 2 px, tinggi berkurang sama besar, margin-bottom bertambah sama besar (dasar dan tetangga diam; diuji Tools/handoff/test-press.mjs). Nilai per komponen: lihat keadaan.json.",
+   "aksi": "Aksi dijalankan saat dilepas di dalam elemen (Clickable), kecuali GAS/REM/kiri/kanan yang aktif selama ditahan."
+  },
+  {
+   "id": "hover-angkat",
+   "nama": "Hover (PC saja)",
+   "lapisan": "uss",
+   "durasi": 80,
+   "easing": "ease",
+   "target": ".dd-btn .sc-side__btn .sc-modebtn .sc-tile .sc-mapcard .dd-skin",
+   "pemicu": ":hover (mouse). Sentuhan tidak memicu hover.",
+   "rincian": "translate 0 −2 px."
+  },
+  {
+   "id": "tekan-datar",
+   "nama": "Tekan elemen datar",
+   "lapisan": "uss",
+   "durasi": 80,
+   "easing": "ease",
+   "target": ".sc-set__row .sc-set__danger .sc-mini",
+   "pemicu": ":active / .is-pressed",
+   "rincian": "Baris pengaturan: latar → --dd-ink-100. Teks hapus progres: opacity 0.6. Minimap: scale 0.97."
+  },
+  {
+   "id": "sakelar",
+   "nama": "Sakelar suara",
+   "lapisan": "uss",
+   "durasi": 160,
+   "easing": "ease-out",
+   "target": ".dd-toggle / .dd-toggle__knob",
+   "pemicu": "Ketuk sakelar → kelas .is-on dipasang/dilepas.",
+   "rincian": "Kenop translate 0 → 44 px; latar --dd-ink-300 → --dd-success. Suara langsung berubah saat diketuk (tidak menunggu animasi)."
+  },
+  {
+   "id": "kontrol-redup",
+   "nama": "Kontrol diredupkan (sorotan, jeda)",
+   "lapisan": "ui",
+   "durasi": 150,
+   "easing": "out-cubic",
+   "target": ".sc-ctl (landscape), .sc-joy (portrait)",
+   "pemicu": "Mulai sorotan tujuan / kembali dari sorotan.",
+   "kf": [
+    {
+     "t": 0,
+     "opacity": 0.92
+    },
+    {
+     "t": 1,
+     "opacity": 0.4
+    }
+   ],
+   "rincian": "Kelas .is-disabled + SetEnabled(false). Teks HUD tidak ikut meredup. Kembali: kebalikannya, durasi sama."
+  },
+  {
+   "id": "popup-buka",
+   "nama": "Popup/dialog muncul",
+   "lapisan": "ui",
+   "durasi": 280,
+   "easing": "out-back",
+   "target": ".dd-scrim (latar) + .dd-dialog (kartu)",
+   "pemicu": "Membuka dialog apa pun: hadiah harian, pilih kota, pengaturan, peta besar, beli, koin kurang, keluar, hapus, jeda, cerita.",
+   "trek": [
+    {
+     "elemen": "scrim",
+     "durasi": 180,
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 0,
+       "e": "out-cubic"
+      },
+      {
+       "t": 1,
+       "opacity": 1
+      }
+     ]
+    },
+    {
+     "elemen": "dialog",
+     "jeda": 40,
+     "durasi": 240,
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 0,
+       "scale": 0.92,
+       "e": "out-back"
+      },
+      {
+       "t": 1,
+       "opacity": 1,
+       "scale": 1
+      }
+     ]
+    }
+   ],
+   "rincian": "transform-origin tengah kartu. Tombol di kartu sudah bisa diketuk sejak 120 ms (tidak menunggu selesai)."
+  },
+  {
+   "id": "popup-tutup",
+   "nama": "Popup/dialog hilang",
+   "lapisan": "ui",
+   "durasi": 160,
+   "easing": "in-cubic",
+   "target": ".dd-scrim + .dd-dialog",
+   "pemicu": "Tombol tutup/aksi dialog, atau ketuk latar untuk dialog yang boleh ditutup (lihat alur.json).",
+   "trek": [
+    {
+     "elemen": "dialog",
+     "durasi": 140,
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 1,
+       "scale": 1,
+       "e": "in-cubic"
+      },
+      {
+       "t": 1,
+       "opacity": 0,
+       "scale": 0.95
+      }
+     ]
+    },
+    {
+     "elemen": "scrim",
+     "durasi": 160,
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 1,
+       "e": "in-cubic"
+      },
+      {
+       "t": 1,
+       "opacity": 0
+      }
+     ]
+    }
+   ],
+   "rincian": "Elemen dilepas dari pohon setelah 160 ms. Masukan ke dialog diblokir sejak awal animasi tutup."
+  },
+  {
+   "id": "layar-ganti",
+   "nama": "Pindah layar penuh",
+   "lapisan": "ui",
+   "durasi": 240,
+   "easing": "out-cubic",
+   "target": "root layar (name=\"layar\")",
+   "pemicu": "Lobby ↔ Garasi, Lobby → HUD (Mulai), Selesai kerja → Lobby, Layar memuat → Lobby.",
+   "trek": [
+    {
+     "elemen": "layar lama",
+     "durasi": 120,
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 1,
+       "e": "in-cubic"
+      },
+      {
+       "t": 1,
+       "opacity": 0
+      }
+     ]
+    },
+    {
+     "elemen": "layar baru",
+     "jeda": 60,
+     "durasi": 180,
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 0,
+       "y": 12,
+       "e": "out-cubic"
+      },
+      {
+       "t": 1,
+       "opacity": 1,
+       "y": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "toast-masuk",
+   "nama": "Pesan (toast) muncul",
+   "lapisan": "ui",
+   "durasi": 220,
+   "easing": "out-back",
+   "target": ".dd-msg",
+   "pemicu": "ShowMessage(teks, detik) — lihat hud.json untuk isi dan durasi tampil.",
+   "varian": {
+    "l": {
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 0,
+       "y": 24,
+       "e": "out-back"
+      },
+      {
+       "t": 1,
+       "opacity": 1,
+       "y": 0
+      }
+     ],
+     "catatan": "landscape: toast di bawah (bottom 36), naik dari bawah"
+    },
+    "p": {
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 0,
+       "y": -24,
+       "e": "out-back"
+      },
+      {
+       "t": 1,
+       "opacity": 1,
+       "y": 0
+      }
+     ],
+     "catatan": "portrait: toast di atas (top 312), turun dari atas"
+    }
+   }
+  },
+  {
+   "id": "toast-keluar",
+   "nama": "Pesan (toast) hilang",
+   "lapisan": "ui",
+   "durasi": 160,
+   "easing": "in-cubic",
+   "target": ".dd-msg",
+   "pemicu": "Waktu tampil habis. Kalau pesan baru datang saat pesan lama tampil: pesan lama keluar 100 ms, lalu pesan baru masuk.",
+   "varian": {
+    "l": {
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 1,
+       "y": 0,
+       "e": "in-cubic"
+      },
+      {
+       "t": 1,
+       "opacity": 0,
+       "y": 8
+      }
+     ]
+    },
+    "p": {
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 1,
+       "y": 0,
+       "e": "in-cubic"
+      },
+      {
+       "t": 1,
+       "opacity": 0,
+       "y": -8
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "koin-plus",
+   "nama": "Koin bertambah (+N)",
+   "lapisan": "ui",
+   "durasi": 1300,
+   "easing": "out-back",
+   "target": "label +N (kelas .sc-dwell, di kiri chip koin) + chip .dd-coins",
+   "pemicu": "Paket sampai, hadiah harian diambil, rangkuman selesai kerja.",
+   "trek": [
+    {
+     "elemen": "label +N",
+     "durasi": 1300,
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 0,
+       "scale": 0.6,
+       "e": "out-back"
+      },
+      {
+       "t": 0.09,
+       "opacity": 1,
+       "scale": 1.15,
+       "e": "out-cubic"
+      },
+      {
+       "t": 0.18,
+       "scale": 1
+      },
+      {
+       "t": 0.69,
+       "opacity": 1,
+       "y": 0,
+       "e": "in-cubic"
+      },
+      {
+       "t": 1,
+       "opacity": 0,
+       "y": -28
+      }
+     ]
+    },
+    {
+     "elemen": "chip koin",
+     "jeda": 200,
+     "durasi": 300,
+     "kf": [
+      {
+       "t": 0,
+       "scale": 1,
+       "e": "out-back"
+      },
+      {
+       "t": 0.4,
+       "scale": 1.15,
+       "e": "out-cubic"
+      },
+      {
+       "t": 1,
+       "scale": 1
+      }
+     ]
+    },
+    {
+     "elemen": "angka koin",
+     "jeda": 200,
+     "durasi": 500,
+     "hitung": "naik dari nilai lama ke nilai baru, bilangan bulat, linear"
+    }
+   ],
+   "rincian": "Posisi label: landscape di kiri chip koin (lihat bingkai 15, left −62 px dari chip); portrait di kanan chip (left 196, top 112)."
+  },
+  {
+   "id": "chip-masuk",
+   "nama": "Chip status muncul",
+   "lapisan": "ui",
+   "durasi": 200,
+   "easing": "out-back",
+   "target": ".dd-chip di .sc-chips",
+   "pemicu": "Paket ekspres/rapuh diambil, pickup bintang/kilat/perisai diambil, bantuan warga dimulai.",
+   "kf": [
+    {
+     "t": 0,
+     "opacity": 0,
+     "scale": 0.6,
+     "e": "out-back"
+    },
+    {
+     "t": 1,
+     "opacity": 1,
+     "scale": 1
+    }
+   ],
+   "rincian": "Chip lain di kolom langsung bergeser (tanpa animasi)."
+  },
+  {
+   "id": "chip-keluar",
+   "nama": "Chip status hilang",
+   "lapisan": "ui",
+   "durasi": 150,
+   "easing": "in-cubic",
+   "target": ".dd-chip",
+   "pemicu": "Efek habis / paket sampai.",
+   "kf": [
+    {
+     "t": 0,
+     "opacity": 1,
+     "scale": 1,
+     "e": "in-cubic"
+    },
+    {
+     "t": 1,
+     "opacity": 0,
+     "scale": 0.8
+    }
+   ]
+  },
+  {
+   "id": "rapuh-kena",
+   "nama": "Paket rapuh terbentur",
+   "lapisan": "ui",
+   "durasi": 300,
+   "easing": "linear",
+   "target": ".dd-meter__seg (segmen baru) + chip rapuh",
+   "pemicu": "Tabrakan saat membawa paket rapuh (satu segmen per benturan).",
+   "trek": [
+    {
+     "elemen": "segmen",
+     "durasi": 240,
+     "kf": [
+      {
+       "t": 0,
+       "scale": 1.4,
+       "e": "out-back"
+      },
+      {
+       "t": 1,
+       "scale": 1
+      }
+     ],
+     "catatan": "kelas .is-hit dipasang di awal"
+    },
+    {
+     "elemen": "chip",
+     "durasi": 300,
+     "kf": [
+      {
+       "t": 0,
+       "x": 0
+      },
+      {
+       "t": 0.2,
+       "x": -6
+      },
+      {
+       "t": 0.4,
+       "x": 6
+      },
+      {
+       "t": 0.6,
+       "x": -4
+      },
+      {
+       "t": 0.8,
+       "x": 4
+      },
+      {
+       "t": 1,
+       "x": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "titik-merah",
+   "nama": "Titik merah (ada yang baru)",
+   "lapisan": "ui",
+   "durasi": 1400,
+   "ulang": "terus",
+   "easing": "in-out-sine",
+   "target": ".sc-dot di tombol Garasi/Hadiah",
+   "pemicu": "Tampil selama kondisinya benar (hadiah harian siap / ada skin yang koinnya cukup). Lihat hud.json.",
+   "kf": [
+    {
+     "t": 0,
+     "scale": 1,
+     "e": "in-out-sine"
+    },
+    {
+     "t": 0.5,
+     "scale": 1.2,
+     "e": "in-out-sine"
+    },
+    {
+     "t": 1,
+     "scale": 1
+    }
+   ]
+  },
+  {
+   "id": "hari-siap",
+   "nama": "Kartu hadiah harian siap",
+   "lapisan": "ui",
+   "durasi": 1600,
+   "ulang": "terus",
+   "easing": "in-out-sine",
+   "target": ".sc-day.is-ready",
+   "pemicu": "Selama popup hadiah harian terbuka dan hari ini belum diambil.",
+   "kf": [
+    {
+     "t": 0,
+     "scale": 1,
+     "e": "in-out-sine"
+    },
+    {
+     "t": 0.5,
+     "scale": 1.04,
+     "e": "in-out-sine"
+    },
+    {
+     "t": 1,
+     "scale": 1
+    }
+   ]
+  },
+  {
+   "id": "hari-ambil",
+   "nama": "Hadiah harian diambil",
+   "lapisan": "ui",
+   "durasi": 260,
+   "easing": "out-back",
+   "target": ".sc-day__done (lencana centang) pada kartu hari ini",
+   "pemicu": "Ketuk kartu siap atau tombol Ambil.",
+   "kf": [
+    {
+     "t": 0,
+     "opacity": 0,
+     "scale": 0,
+     "e": "out-back"
+    },
+    {
+     "t": 0.7,
+     "opacity": 1,
+     "scale": 1.2,
+     "e": "out-cubic"
+    },
+    {
+     "t": 1,
+     "scale": 1
+    }
+   ],
+   "rincian": "Kelas kartu is-ready → is-claimed di awal. Lalu koin-plus dengan jeda 150 ms."
+  },
+  {
+   "id": "lingkar-berhenti",
+   "nama": "Lingkar berhenti di sekitar truk",
+   "lapisan": "ui",
+   "durasi": null,
+   "easing": "linear",
+   "target": "runtime--lingkar-berhenti (Painter2D, pusat = posisi layar truk)",
+   "pemicu": "Truk berhenti di zona singgah/bantuan/surat.",
+   "rincian": "Busur mengikuti progres (bukan waktu): progres = dwell/batas (singgah 1,5 dtk; bantuan dan surat 2 dtk; turun 2,5× saat truk bergerak, rumus AdvanceDwell). Jejak putih 75% tebal 12 px, isi #3F8F3E tebal 12 px ujung bulat, mulai dari atas searah jarum jam, jari-jari 1,7 unit dunia × ppu. Selesai: lingkar scale 1 → 1,15 dan opacity → 0 dalam 200 ms out-cubic.",
+   "kf": [
+    {
+     "t": 0,
+     "scale": 1,
+     "opacity": 1,
+     "e": "out-cubic"
+    },
+    {
+     "t": 1,
+     "scale": 1.15,
+     "opacity": 0
+    }
+   ],
+   "durasiSelesai": 200
+  },
+  {
+   "id": "joystick",
+   "nama": "Joystick portrait",
+   "lapisan": "ui",
+   "durasi": 100,
+   "easing": "out-cubic",
+   "target": ".sc-joy + .sc-joy__knob",
+   "pemicu": "Sentuhan pertama di zona kontrol (38% bawah layar, di luar tombol).",
+   "trek": [
+    {
+     "elemen": "muncul (alas)",
+     "durasi": 100,
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 0,
+       "scale": 0.9,
+       "e": "out-cubic"
+      },
+      {
+       "t": 1,
+       "opacity": 1,
+       "scale": 1
+      }
+     ]
+    },
+    {
+     "elemen": "lepas: kenop kembali",
+     "durasi": 120,
+     "kf": [
+      {
+       "t": 0,
+       "e": "out-back"
+      },
+      {
+       "t": 1
+      }
+     ],
+     "catatan": "kenop dari posisinya ke tengah (x,y → 0)"
+    },
+    {
+     "elemen": "lepas: alas hilang",
+     "jeda": 120,
+     "durasi": 150,
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 1,
+       "e": "in-cubic"
+      },
+      {
+       "t": 1,
+       "opacity": 0
+      }
+     ]
+    }
+   ],
+   "rincian": "Pusat alas = titik sentuh pertama. Kenop mengikuti jari tanpa perataan, dibatasi jari-jari 88 px (alas 176 px). Zona mati 0,18 × 88 px."
+  },
+  {
+   "id": "petunjuk-awal",
+   "nama": "Petunjuk kendali (sesi pertama)",
+   "lapisan": "ui",
+   "durasi": 1600,
+   "ulang": "terus",
+   "easing": "in-out-sine",
+   "target": ".sc-coach",
+   "pemicu": "Tutorial, sebelum pemain pertama kali menahan gas/joystick ≥ 1 detik. Hilang (opacity → 0, 200 ms) setelah itu atau setelah 8 detik.",
+   "kf": [
+    {
+     "t": 0,
+     "y": 0,
+     "e": "in-out-sine"
+    },
+    {
+     "t": 0.5,
+     "y": -6,
+     "e": "in-out-sine"
+    },
+    {
+     "t": 1,
+     "y": 0
+    }
+   ]
+  },
+  {
+   "id": "rangkuman",
+   "nama": "Rangkuman selesai kerja",
+   "lapisan": "ui",
+   "durasi": 220,
+   "easing": "out-cubic",
+   "target": "baris rangkuman (paket, koin, bintang)",
+   "pemicu": "Dialog selesai kerja terbuka (sesudah popup-buka).",
+   "kf": [
+    {
+     "t": 0,
+     "opacity": 0,
+     "y": 12,
+     "e": "out-cubic"
+    },
+    {
+     "t": 1,
+     "opacity": 1,
+     "y": 0
+    }
+   ],
+   "rincian": "Baris ke-n mulai 80 ms × n setelah popup selesai. Total koin menghitung naik 600 ms linear."
+  },
+  {
+   "id": "kamera-sorot",
+   "nama": "Kamera menyorot tujuan",
+   "lapisan": "dunia",
+   "durasi": 2000,
+   "easing": "in-out-sine",
+   "target": "kamera utama (Cinemachine dimatikan sementara)",
+   "pemicu": "Tujuan baru ditampilkan (PreviewDestination) — waktu nyata, Time.timeScale = 0.",
+   "kf": [
+    {
+     "t": 0,
+     "lerp": 0,
+     "e": "in-out-sine"
+    },
+    {
+     "t": 0.2,
+     "lerp": 1
+    },
+    {
+     "t": 0.8,
+     "lerp": 1,
+     "e": "in-out-sine"
+    },
+    {
+     "t": 1,
+     "lerp": 0
+    }
+   ],
+   "rincian": "lerp 0 = posisi kamera semula, 1 = di atas tujuan. Total 2 detik sama seperti kode sekarang; bedanya kamera meluncur (400 ms) bukan melompat. Kontrol diredupkan (kontrol-redup), teks HUD tetap terang."
+  },
+  {
+   "id": "sorotan-kartu",
+   "nama": "Kartu sorotan (Rumah tujuan / Selesaikan pengantaran)",
+   "lapisan": "ui",
+   "durasi": 2000,
+   "easing": "linear",
+   "target": ".sc-spot + .sc-timer__fill",
+   "pemicu": "Bersamaan dengan kamera-sorot (waktu nyata).",
+   "trek": [
+    {
+     "elemen": "kartu muncul",
+     "durasi": 220,
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 0,
+       "scale": 0.92,
+       "e": "out-back"
+      },
+      {
+       "t": 1,
+       "opacity": 1,
+       "scale": 1
+      }
+     ]
+    },
+    {
+     "elemen": "isi timer",
+     "durasi": 2000,
+     "kf": [
+      {
+       "t": 0,
+       "e": "linear"
+      },
+      {
+       "t": 1
+      }
+     ],
+     "catatan": "lebar .sc-timer__fill 100% → 0% (sisa waktu sorotan)"
+    },
+    {
+     "elemen": "kartu hilang",
+     "jeda": 1840,
+     "durasi": 160,
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 1,
+       "e": "in-cubic"
+      },
+      {
+       "t": 1,
+       "opacity": 0
+      }
+     ]
+    }
+   ],
+   "rincian": "Varian kuning .sc-spot--warn dipakai saat selesai kerja diminta tapi masih ada paket/surat (lihat hud.json)."
+  },
+  {
+   "id": "pickup-bob",
+   "nama": "Pickup bintang/kilat/perisai mengambang",
+   "lapisan": "dunia",
+   "durasi": 2400,
+   "ulang": "terus",
+   "easing": "in-out-sine",
+   "target": "sprite pickup (2,1 unit) + kilau berwarna (3,2 unit, PICKUP_GLOW)",
+   "pemicu": "Selama pickup ada.",
+   "trek": [
+    {
+     "elemen": "benda",
+     "kf": [
+      {
+       "t": 0,
+       "y": 0,
+       "scale": 1,
+       "e": "in-out-sine"
+      },
+      {
+       "t": 0.5,
+       "y": 0.1,
+       "scale": 1.04,
+       "e": "in-out-sine"
+      },
+      {
+       "t": 1,
+       "y": 0,
+       "scale": 1
+      }
+     ]
+    },
+    {
+     "elemen": "kilau",
+     "kf": [
+      {
+       "t": 0,
+       "opacity": 0.8,
+       "e": "in-out-sine"
+      },
+      {
+       "t": 0.5,
+       "opacity": 1,
+       "e": "in-out-sine"
+      },
+      {
+       "t": 1,
+       "opacity": 0.8
+      }
+     ],
+     "catatan": "kilau tidak ikut naik; benda dan kilau tetap sepusat saat diam"
+    }
+   ],
+   "rincian": "Menggantikan denyut DeliveryMarker (sin 3,5 rad/dtk × 0,08)."
+  },
+  {
+   "id": "pickup-ambil",
+   "nama": "Pickup diambil",
+   "lapisan": "dunia",
+   "durasi": 300,
+   "easing": "out-cubic",
+   "target": "sprite pickup + kilau",
+   "pemicu": "Truk menyentuh pickup.",
+   "trek": [
+    {
+     "elemen": "benda",
+     "durasi": 250,
+     "kf": [
+      {
+       "t": 0,
+       "scale": 1,
+       "opacity": 1,
+       "e": "out-cubic"
+      },
+      {
+       "t": 1,
+       "scale": 1.35,
+       "opacity": 0
+      }
+     ]
+    },
+    {
+     "elemen": "kilau",
+     "durasi": 300,
+     "kf": [
+      {
+       "t": 0,
+       "scale": 1,
+       "opacity": 1,
+       "e": "out-cubic"
+      },
+      {
+       "t": 1,
+       "scale": 1.6,
+       "opacity": 0
+      }
+     ]
+    }
+   ],
+   "rincian": "Bersamaan: chip-masuk di HUD dan suara ambil."
+  },
+  {
+   "id": "zona-muncul",
+   "nama": "Zona tujuan muncul",
+   "lapisan": "dunia",
+   "durasi": 300,
+   "easing": "out-back",
+   "target": "StopZone (bantalan, ikon, tepi)",
+   "pemicu": "Zona menjadi tujuan (zona hanya ada saat menjadi tujuan).",
+   "kf": [
+    {
+     "t": 0,
+     "scale": 0.6,
+     "opacity": 0,
+     "e": "out-back"
+    },
+    {
+     "t": 1,
+     "scale": 1,
+     "opacity": 1
+    }
+   ],
+   "rincian": "Hilang: scale 1 → 0,8, opacity → 0, 200 ms in-cubic."
+  },
+  {
+   "id": "zona-isi",
+   "nama": "Tepi zona terisi saat berhenti",
+   "lapisan": "dunia",
+   "durasi": 750,
+   "easing": "linear",
+   "target": "garis tepi StopZone",
+   "pemicu": "Truk diam (kecepatan < 0,3) di dalam zona ambil/antar/parkir.",
+   "rincian": "Tepi putus-putus terisi melingkar mengikuti progres = dwell/0,75 dtk (bukan waktu tetap): naik 1×, turun 2,5× saat bergerak. Selesai → lencana centang pop (lihat zona-pop) dan paket-lompat."
+  },
+  {
+   "id": "zona-pop",
+   "nama": "Lencana centang zona",
+   "lapisan": "dunia",
+   "durasi": 330,
+   "easing": "out-back",
+   "target": "ikon di tengah zona",
+   "pemicu": "Progres zona penuh.",
+   "kf": [
+    {
+     "t": 0,
+     "scale": 0.6,
+     "opacity": 0,
+     "e": "out-back"
+    },
+    {
+     "t": 0.45,
+     "scale": 1.15,
+     "opacity": 1,
+     "e": "out-cubic"
+    },
+    {
+     "t": 1,
+     "scale": 1
+    }
+   ],
+   "rincian": "Dari animasi Gerbang Desain 2 (pop: 41,5% → 44% → 47% dari siklus 6 dtk)."
+  },
+  {
+   "id": "paket-masuk",
+   "nama": "Paket melompat gudang → truk",
+   "lapisan": "dunia",
+   "durasi": 630,
+   "easing": "out-sine",
+   "target": "sprite paket (package.png)",
+   "pemicu": "Zona ambil penuh.",
+   "kf": [
+    {
+     "t": 0,
+     "lerp": 0,
+     "lift": 0,
+     "scale": 0.6,
+     "opacity": 0,
+     "e": "out-cubic"
+    },
+    {
+     "t": 0.143,
+     "scale": 1.1,
+     "opacity": 1,
+     "e": "out-sine"
+    },
+    {
+     "t": 0.429,
+     "lerp": 0.35,
+     "lift": 0.6,
+     "scale": 1.3,
+     "e": "in-sine"
+    },
+    {
+     "t": 0.81,
+     "lerp": 1,
+     "lift": 0,
+     "scale": 1,
+     "e": "in-cubic"
+    },
+    {
+     "t": 1,
+     "lerp": 1,
+     "scale": 0.3,
+     "opacity": 0
+    }
+   ],
+   "rincian": "Asal = dok muat gudang, tujuan = tengah truk. Dari animasi Gerbang Desain 2 (parcel-in: 41,5% → 43% → 46% → 50% → 52% dari 6 dtk). Paket tidak tampil di atas truk sesudahnya; status membawa paket ada di HUD."
+  },
+  {
+   "id": "paket-keluar",
+   "nama": "Paket melompat truk → pintu rumah",
+   "lapisan": "dunia",
+   "durasi": 630,
+   "easing": "out-sine",
+   "target": "sprite paket",
+   "pemicu": "Zona antar penuh.",
+   "kf": [
+    {
+     "t": 0,
+     "lerp": 0,
+     "lift": 0,
+     "scale": 0.3,
+     "opacity": 0,
+     "e": "out-cubic"
+    },
+    {
+     "t": 0.143,
+     "scale": 1,
+     "opacity": 1,
+     "e": "out-sine"
+    },
+    {
+     "t": 0.5,
+     "lerp": 0.65,
+     "lift": 0.6,
+     "scale": 1.3,
+     "e": "in-sine"
+    },
+    {
+     "t": 0.81,
+     "lerp": 1,
+     "lift": 0,
+     "scale": 1,
+     "e": "in-cubic"
+    },
+    {
+     "t": 1,
+     "lerp": 1,
+     "scale": 0.3,
+     "opacity": 0
+    }
+   ],
+   "rincian": "Asal = tengah truk, tujuan = titik pintu rumah. Sesudahnya: konfeti-antar dan koin-plus."
+  },
+  {
+   "id": "konfeti-antar",
+   "nama": "Konfeti paket sampai",
+   "lapisan": "dunia",
+   "durasi": 650,
+   "easing": "linear",
+   "target": "12 titik (DeliveryGameManager.Confetti)",
+   "pemicu": "Paket sampai.",
+   "rincian": "Tetap seperti kode sekarang: 12 titik jari-jari 0,14 unit, warna selang-seling paket/rumah, bergerak lurus keluar 3 unit/dtk selama 0,65 dtk. Tambahan: opacity 1 → 0 pada 150 ms terakhir."
+  }
+ ]
+}

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 07. Dialog beli (landscape 1280x720) — dibangkitkan dari Design/d4, jangan disunting tangan.
+     ID inventaris: B05
+     Catatan: Hanya skin, nama, dan harga. Saldo diperiksa ulang sebelum transaksi. -->
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../Styles/DeliveryDash.uss" />
+    <ui:VisualElement name="layar" class="sc sc--l" picking-mode="Ignore">
+        <ui:VisualElement name="page" class="sc-fill sc-page" picking-mode="Ignore" />
+        <ui:VisualElement name="@head" class="sc-abs" style="left: 24px; top: 20px; width: 1232px" picking-mode="Ignore">
+            <ui:VisualElement name="head" class="sc-head" picking-mode="Ignore">
+                <ui:VisualElement name="btn:kembali" class="dd-btn dd-btn--quiet dd-btn--small sc-head__back">
+                    <ui:VisualElement name="ikon-back" class="dd-btn__icon ikon ikon--i-back" picking-mode="Ignore" />
+                    <ui:Label name="teks" text="Kembali" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Label name="title" class="sc-head__title" text="Garasi truk" picking-mode="Ignore" />
+                <ui:VisualElement name="coins" class="dd-coins" picking-mode="Ignore">
+                    <ui:VisualElement name="ikon-coin" class="dd-coins__icon ikon ikon--i-coin" picking-mode="Ignore" />
+                    <ui:Label name="teks" text="312" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@preview" class="sc-abs" style="left: 24px; top: 108px" picking-mode="Ignore">
+            <ui:VisualElement name="preview" class="sc-preview" style="width: 364px" picking-mode="Ignore">
+                <ui:VisualElement name="stage" class="sc-preview__stage" style="height: 380px" picking-mode="Ignore">
+                    <ui:VisualElement name="truck" class="sc-bg sc-preview__truck a-skin-kepik" style="width: 140px; height: 298px" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Label name="name" class="sc-preview__name" text="Kepik" picking-mode="Ignore" />
+                <ui:Label name="desc" class="sc-preview__desc" text="Merah dengan bintik hitam." picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@grid" class="sc-abs sc-col" style="left: 410px; top: 108px; width: 850px; height: 600px; overflow: hidden" picking-mode="Ignore">
+            <ui:VisualElement name="grid" class="sc-grid" picking-mode="Ignore">
+                <ui:VisualElement name="skin:kurir" class="dd-skin dd-skin--sm sc-skin-gap">
+                    <ui:VisualElement name="preview" class="dd-skin__preview" picking-mode="Ignore">
+                        <ui:VisualElement name="truck" class="sc-bg dd-skin__truck a-skin-kurir" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                    <ui:Label name="name" class="dd-skin__name" text="Kurir" picking-mode="Ignore" />
+                    <ui:VisualElement name="free" class="dd-skin__free" picking-mode="Ignore">
+                        <ui:Label name="teks" text="Milikmu" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="skin:kepik" class="dd-skin dd-skin--sm sc-skin-gap is-equipped">
+                    <ui:VisualElement name="preview" class="dd-skin__preview" picking-mode="Ignore">
+                        <ui:VisualElement name="truck" class="sc-bg dd-skin__truck a-skin-kepik" picking-mode="Ignore" />
+                        <ui:Label name="tag" class="dd-skin__tag" text="Dipakai" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                    <ui:Label name="name" class="dd-skin__name" text="Kepik" picking-mode="Ignore" />
+                    <ui:VisualElement name="free" class="dd-skin__free" picking-mode="Ignore">
+                        <ui:Label name="teks" text="Dipakai" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="skin:awan" class="dd-skin dd-skin--sm sc-skin-gap is-locked">
+                    <ui:VisualElement name="preview" class="dd-skin__preview" picking-mode="Ignore">
+                        <ui:VisualElement name="truck" class="sc-bg dd-skin__truck a-skin-awan-kunci" picking-mode="Ignore" />
+                        <ui:VisualElement name="lock" class="dd-skin__lock" picking-mode="Ignore">
+                            <ui:VisualElement name="ikon-lock" class="dd-skin__lock-glyph ikon ikon--i-lock" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:Label name="name" class="dd-skin__name" text="Awan" picking-mode="Ignore" />
+                    <ui:VisualElement name="price" class="dd-skin__price" picking-mode="Ignore">
+                        <ui:VisualElement name="ikon-coin" class="dd-skin__price-icon ikon ikon--i-coin" picking-mode="Ignore" />
+                        <ui:Label name="teks" text="250" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="skin:pisang" class="dd-skin dd-skin--sm sc-skin-gap is-locked">
+                    <ui:VisualElement name="preview" class="dd-skin__preview" picking-mode="Ignore">
+                        <ui:VisualElement name="truck" class="sc-bg dd-skin__truck a-skin-pisang-kunci" picking-mode="Ignore" />
+                        <ui:VisualElement name="lock" class="dd-skin__lock" picking-mode="Ignore">
+                            <ui:VisualElement name="ikon-lock" class="dd-skin__lock-glyph ikon ikon--i-lock" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:Label name="name" class="dd-skin__name" text="Pisang" picking-mode="Ignore" />
+                    <ui:VisualElement name="price" class="dd-skin__price" picking-mode="Ignore">
+                        <ui:VisualElement name="ikon-coin" class="dd-skin__price-icon ikon ikon--i-coin" picking-mode="Ignore" />
+                        <ui:Label name="teks" text="350" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="skin:rimba" class="dd-skin dd-skin--sm sc-skin-last is-locked">
+                    <ui:VisualElement name="preview" class="dd-skin__preview" picking-mode="Ignore">
+                        <ui:VisualElement name="truck" class="sc-bg dd-skin__truck a-skin-rimba-kunci" picking-mode="Ignore" />
+                        <ui:VisualElement name="lock" class="dd-skin__lock" picking-mode="Ignore">
+                            <ui:VisualElement name="ikon-lock" class="dd-skin__lock-glyph ikon ikon--i-lock" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:Label name="name" class="dd-skin__name" text="Rimba" picking-mode="Ignore" />
+                    <ui:VisualElement name="price" class="dd-skin__price" picking-mode="Ignore">
+                        <ui:VisualElement name="ikon-coin" class="dd-skin__price-icon ikon ikon--i-coin" picking-mode="Ignore" />
+                        <ui:Label name="teks" text="450" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="skin:zebra" class="dd-skin dd-skin--sm sc-skin-gap is-locked">
+                    <ui:VisualElement name="preview" class="dd-skin__preview" picking-mode="Ignore">
+                        <ui:VisualElement name="truck" class="sc-bg dd-skin__truck a-skin-zebra-kunci" picking-mode="Ignore" />
+                        <ui:VisualElement name="lock" class="dd-skin__lock" picking-mode="Ignore">
+                            <ui:VisualElement name="ikon-lock" class="dd-skin__lock-glyph ikon ikon--i-lock" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:Label name="name" class="dd-skin__name" text="Zebra" picking-mode="Ignore" />
+                    <ui:VisualElement name="price" class="dd-skin__price" picking-mode="Ignore">
+                        <ui:VisualElement name="ikon-coin" class="dd-skin__price-icon ikon ikon--i-coin" picking-mode="Ignore" />
+                        <ui:Label name="teks" text="550" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="skin:stroberi" class="dd-skin dd-skin--sm sc-skin-gap is-locked">
+                    <ui:VisualElement name="preview" class="dd-skin__preview" picking-mode="Ignore">
+                        <ui:VisualElement name="truck" class="sc-bg dd-skin__truck a-skin-stroberi-kunci" picking-mode="Ignore" />
+                        <ui:VisualElement name="lock" class="dd-skin__lock" picking-mode="Ignore">
+                            <ui:VisualElement name="ikon-lock" class="dd-skin__lock-glyph ikon ikon--i-lock" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:Label name="name" class="dd-skin__name" text="Stroberi" picking-mode="Ignore" />
+                    <ui:VisualElement name="price" class="dd-skin__price" picking-mode="Ignore">
+                        <ui:VisualElement name="ikon-coin" class="dd-skin__price-icon ikon ikon--i-coin" picking-mode="Ignore" />
+                        <ui:Label name="teks" text="650" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="skin:balap" class="dd-skin dd-skin--sm sc-skin-gap is-locked">
+                    <ui:VisualElement name="preview" class="dd-skin__preview" picking-mode="Ignore">
+                        <ui:VisualElement name="truck" class="sc-bg dd-skin__truck a-skin-balap-kunci" picking-mode="Ignore" />
+                        <ui:VisualElement name="lock" class="dd-skin__lock" picking-mode="Ignore">
+                            <ui:VisualElement name="ikon-lock" class="dd-skin__lock-glyph ikon ikon--i-lock" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:Label name="name" class="dd-skin__name" text="Balap" picking-mode="Ignore" />
+                    <ui:VisualElement name="price" class="dd-skin__price" picking-mode="Ignore">
+                        <ui:VisualElement name="ikon-coin" class="dd-skin__price-icon ikon ikon--i-coin" picking-mode="Ignore" />
+                        <ui:Label name="teks" text="750" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="skin:pelangi" class="dd-skin dd-skin--sm sc-skin-gap is-locked">
+                    <ui:VisualElement name="preview" class="dd-skin__preview" picking-mode="Ignore">
+                        <ui:VisualElement name="truck" class="sc-bg dd-skin__truck a-skin-pelangi-kunci" picking-mode="Ignore" />
+                        <ui:VisualElement name="lock" class="dd-skin__lock" picking-mode="Ignore">
+                            <ui:VisualElement name="ikon-lock" class="dd-skin__lock-glyph ikon ikon--i-lock" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:Label name="name" class="dd-skin__name" text="Pelangi" picking-mode="Ignore" />
+                    <ui:VisualElement name="price" class="dd-skin__price" picking-mode="Ignore">
+                        <ui:VisualElement name="ikon-coin" class="dd-skin__price-icon ikon ikon--i-coin" picking-mode="Ignore" />
+                        <ui:Label name="teks" text="875" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="skin:galaksi" class="dd-skin dd-skin--sm sc-skin-last is-locked">
+                    <ui:VisualElement name="preview" class="dd-skin__preview" picking-mode="Ignore">
+                        <ui:VisualElement name="truck" class="sc-bg dd-skin__truck a-skin-galaksi-kunci" picking-mode="Ignore" />
+                        <ui:VisualElement name="lock" class="dd-skin__lock" picking-mode="Ignore">
+                            <ui:VisualElement name="ikon-lock" class="dd-skin__lock-glyph ikon ikon--i-lock" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:Label name="name" class="dd-skin__name" text="Galaksi" picking-mode="Ignore" />
+                    <ui:VisualElement name="price" class="dd-skin__price" picking-mode="Ignore">
+                        <ui:VisualElement name="ikon-coin" class="dd-skin__price-icon ikon ikon--i-coin" picking-mode="Ignore" />
+                        <ui:Label name="teks" text="1000" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="scrim" class="sc-fill dd-scrim">
+            <ui:VisualElement name="dialog:mau-beli-ini" class="dd-dialog" picking-mode="Ignore">
+                <ui:VisualElement name="preview" class="dd-skin__preview dd-dialog__skin" picking-mode="Ignore">
+                    <ui:VisualElement name="truck" class="sc-bg dd-skin__truck a-skin-awan" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Label name="title" class="dd-dialog__title" text="Mau beli ini?" picking-mode="Ignore" />
+                <ui:VisualElement name="item" class="dd-dialog__item" picking-mode="Ignore">
+                    <ui:Label name="name" class="dd-dialog__name" text="Awan" picking-mode="Ignore" />
+                    <ui:VisualElement name="price" class="dd-skin__price" picking-mode="Ignore">
+                        <ui:VisualElement name="ikon-coin" class="dd-skin__price-icon ikon ikon--i-coin" picking-mode="Ignore" />
+                        <ui:Label name="teks" text="250" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="actions" class="dd-dialog__actions" picking-mode="Ignore">
+                    <ui:VisualElement name="btn:tidak" class="dd-btn dd-btn--quiet">
+                        <ui:Label name="teks" text="Tidak" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="btn:ya-beli" class="dd-btn dd-btn--reward">
+                        <ui:VisualElement name="ikon-coin" class="dd-btn__icon ikon ikon--i-coin" picking-mode="Ignore" />
+                        <ui:Label name="teks" text="Ya, beli" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

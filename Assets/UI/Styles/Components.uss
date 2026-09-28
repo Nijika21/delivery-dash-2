@@ -1,0 +1,504 @@
+/* Components.uss (Design/d1/components.css) — dibangkitkan oleh Tools/handoff/build-handoff.mjs dari CSS desain. Jangan disunting tangan. */
+/* Komponen Delivery Dash 2 — subset CSS yang bisa dipindah ke USS.
+   Diperiksa oleh Tools/art/lint-uss-css.mjs. Tanpa gap, box-shadow, gradien, calc, pseudo-element.
+   Bayangan "tekan 3D" memakai border bawah; semua jarak antar-anak memakai margin. */
+/* ---------- Tombol ---------- */ .dd-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: var(--dd-button-h);
+  min-width: 168px;
+  padding-left: 28px;
+  padding-right: 28px;
+  border-radius: var(--dd-radius-md);
+  border-bottom-width: var(--dd-edge-button);
+  border-bottom-color: var(--dd-primary-edge);
+  background-color: var(--dd-primary);
+  color: var(--dd-text-on-fill);
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: var(--dd-button-size);
+  transition: translate 0.08s, border-bottom-width 0.08s, height 0.08s, margin-bottom 0.08s;
+}
+.dd-btn:hover {
+  translate: 0 -2px;
+}
+.dd-btn:active,
+/* Tekan: permukaan turun 4 px,
+tepi bawah 6 → 2 px,
+tinggi −4 px dan margin-bottom +4 px (kotak margin tetap: dasar tidak bergeser di susunan atas,
+tengah,
+maupun bawah). */ .dd-btn.is-pressed {
+  translate: 0 4px;
+  height: 68px;
+  border-bottom-width: var(--dd-edge-button-pressed);
+  margin-bottom: 4px;
+}
+.dd-btn--reward {
+  background-color: var(--dd-reward);
+  border-bottom-color: var(--dd-reward-edge);
+  color: var(--dd-text);
+}
+.dd-btn--danger {
+  background-color: var(--dd-danger);
+  border-bottom-color: var(--dd-danger-edge);
+}
+.dd-btn--success {
+  background-color: var(--dd-success);
+  border-bottom-color: var(--dd-success-edge);
+}
+.dd-btn--quiet {
+  background-color: var(--dd-surface);
+  color: var(--dd-text);
+  border-top-width: 3px;
+  border-left-width: 3px;
+  border-right-width: 3px;
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+}
+.dd-btn.is-disabled,
+.dd-btn:disabled {
+  background-color: var(--dd-disabled);
+  border-bottom-color: var(--dd-disabled-edge);
+  color: var(--dd-disabled-text);
+  translate: 0 0;
+}
+.dd-btn__icon {
+  width: 34px;
+  height: 34px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+.dd-btn--small {
+  height: 56px;
+  min-width: 120px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 24px;
+  border-bottom-width: 5px;
+}
+.dd-btn--small:active,
+.dd-btn--small.is-pressed {
+  height: 53px;
+  translate: 0 3px;
+  border-bottom-width: 2px;
+  margin-bottom: 3px;
+}
+/* ---------- Tombol ikon (jeda,
+tutup,
+peta) ---------- */ .dd-iconbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--dd-icon-button);
+  height: var(--dd-icon-button);
+  border-radius: var(--dd-radius-md);
+  border-top-width: 3px;
+  border-left-width: 3px;
+  border-right-width: 3px;
+  border-bottom-width: var(--dd-edge-button);
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+  transition: translate 0.08s, border-bottom-width 0.08s, height 0.08s, margin-bottom 0.08s;
+}
+.dd-iconbtn:active,
+.dd-iconbtn.is-pressed {
+  translate: 0 4px;
+  height: 68px;
+  border-bottom-width: var(--dd-edge-button-pressed);
+  margin-bottom: 4px;
+}
+.dd-iconbtn__glyph {
+  width: 36px;
+  height: 36px;
+}
+.dd-iconbtn--close {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--dd-radius-pill);
+  border-bottom-width: 5px;
+}
+.dd-iconbtn--close:active,
+.dd-iconbtn--close.is-pressed {
+  translate: 0 3px;
+  height: 53px;
+  border-bottom-width: 2px;
+  margin-bottom: 3px;
+}
+/* ---------- Kartu ---------- */ .dd-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--dd-space-5);
+  border-radius: var(--dd-radius-lg);
+  border-width: 3px;
+  border-bottom-width: var(--dd-edge-card);
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-card);
+}
+.dd-card__title {
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: var(--dd-heading-size);
+  color: var(--dd-text);
+}
+.dd-card__text {
+  margin-top: var(--dd-space-3);
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: var(--dd-body-l-size);
+  color: var(--dd-ink-700);
+}
+/* ---------- Chip ---------- */ .dd-chip {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: var(--dd-chip-h);
+  padding-left: 8px;
+  padding-right: 18px;
+  border-radius: var(--dd-radius-pill);
+  border-width: 3px;
+  border-bottom-width: 5px;
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+  color: var(--dd-text);
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: var(--dd-label-size);
+}
+.dd-chip__icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+.dd-chip--help {
+  background-color: var(--dd-green-100);
+  border-color: #B7D9A6;
+  border-bottom-color: #8DBB77;
+}
+.dd-chip--warn {
+  background-color: var(--dd-yellow-300);
+  border-color: #EFCB5C;
+  border-bottom-color: var(--dd-yellow-700);
+}
+/* ---------- Koin ---------- */ .dd-coins {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 56px;
+  padding-left: 8px;
+  padding-right: 20px;
+  border-radius: var(--dd-radius-pill);
+  border-width: 3px;
+  border-bottom-width: 5px;
+  border-color: var(--dd-orange-300);
+  border-bottom-color: var(--dd-reward-edge);
+  background-color: var(--dd-orange-100);
+  color: var(--dd-text);
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: var(--dd-number-size);
+}
+.dd-coins__icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+/* ---------- Gembok ---------- */ .dd-lock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--dd-radius-pill);
+  border-width: 3px;
+  border-color: var(--dd-surface);
+  background-color: var(--dd-ink-900);
+}
+.dd-lock__glyph {
+  width: 24px;
+  height: 24px;
+}
+/* ---------- Kartu skin (garasi) ---------- Preview selalu terlihat. Terkunci: kotak preview abu-abu,
+truk versi abu-abu terang (dibake,
+bukan filter),
+gembok besar di tengah. */ .dd-skin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 184px;
+  padding-top: 12px;
+  padding-bottom: 14px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: var(--dd-radius-lg);
+  border-width: 3px;
+  border-bottom-width: var(--dd-edge-card);
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.dd-skin.is-equipped {
+  border-color: var(--dd-primary);
+  border-bottom-color: var(--dd-primary-edge);
+}
+.dd-skin__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 154px;
+  height: 154px;
+  border-radius: var(--dd-radius-md);
+  border-width: 3px;
+  border-color: var(--dd-cyan-100);
+  background-color: var(--dd-cyan-50);
+}
+.dd-skin.is-equipped .dd-skin__preview {
+  background-color: var(--dd-cyan-100);
+  border-color: var(--dd-cyan-300);
+}
+.dd-skin.is-locked .dd-skin__preview {
+  background-color: #C8D1D3;
+  border-color: #B4C0C3;
+}
+.dd-skin__truck {
+  width: 56px;
+  height: 120px;
+}
+.dd-skin__lock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 42px;
+  top: 42px;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--dd-radius-pill);
+  border-width: 4px;
+  border-color: var(--dd-surface);
+  background-color: var(--dd-ink-900);
+}
+.dd-skin__lock-glyph {
+  width: 32px;
+  height: 32px;
+}
+.dd-skin__tag {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: var(--dd-radius-pill);
+  background-color: var(--dd-primary);
+  color: var(--dd-text-on-fill);
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 18px;
+}
+.dd-skin__name {
+  margin-top: 10px;
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: var(--dd-label-size);
+  color: var(--dd-text);
+}
+.dd-skin.is-locked .dd-skin__name {
+  color: var(--dd-ink-500);
+}
+.dd-skin__price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4px;
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: 24px;
+  color: var(--dd-ink-700);
+}
+.dd-skin__price-icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 6px;
+}
+/* ---------- Dialog ---------- */ .dd-scrim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dd-scrim);
+}
+.dd-dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  padding: var(--dd-space-6);
+  border-radius: var(--dd-radius-lg);
+  border-width: 3px;
+  border-bottom-width: var(--dd-edge-card);
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.dd-dialog__skin {
+  width: 136px;
+  height: 136px;
+  margin-bottom: var(--dd-space-4);
+}
+.dd-dialog__skin .dd-skin__truck {
+  width: 54px;
+  height: 116px;
+}
+.dd-dialog__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--dd-space-3);
+}
+.dd-dialog__name {
+  margin-right: 12px;
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: 30px;
+  color: var(--dd-text);
+}
+.dd-dialog__title {
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: 40px;
+  color: var(--dd-text);
+  -unity-text-align: upper-center;
+}
+.dd-dialog__text {
+  margin-top: var(--dd-space-3);
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: var(--dd-body-l-size);
+  color: var(--dd-ink-700);
+  -unity-text-align: upper-center;
+}
+.dd-dialog__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: var(--dd-space-6);
+}
+.dd-dialog__actions .dd-btn {
+  margin-left: 8px;
+  margin-right: 8px;
+  min-width: 200px;
+}
+/* ---------- Pesan (pil dengan lencana menyembul) ---------- */ .dd-msg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 68px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 28px;
+  border-radius: 34px;
+  border-width: 3px;
+  border-bottom-width: 6px;
+  border-color: var(--dd-cyan-300);
+  border-bottom-color: var(--dd-cyan-600);
+  background-color: var(--dd-cyan-50);
+  color: var(--dd-text);
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: var(--dd-body-size);
+}
+.dd-msg__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-right: 16px;
+  border-radius: var(--dd-radius-pill);
+  background-color: var(--dd-cyan-600);
+  flex-shrink: 0;
+}
+.dd-msg__glyph {
+  width: 28px;
+  height: 28px;
+}
+.dd-msg__strong {
+  margin-left: 8px;
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: var(--dd-number-size);
+  color: var(--dd-green-800);
+}
+.dd-msg--warn {
+  background-color: var(--dd-yellow-300);
+  border-color: #E9C24F;
+  border-bottom-color: var(--dd-yellow-700);
+}
+.dd-msg--warn .dd-msg__badge {
+  background-color: var(--dd-yellow-500);
+}
+.dd-msg--good {
+  background-color: var(--dd-green-100);
+  border-color: #A9D39A;
+  border-bottom-color: var(--dd-green-800);
+}
+.dd-msg--good .dd-msg__badge {
+  background-color: var(--dd-green-600);
+}
+/* ---------- Bar status HUD ---------- */ .dd-hudbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: var(--dd-hud-bar-h);
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: var(--dd-radius-pill);
+  border-width: 3px;
+  border-bottom-width: 6px;
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.dd-hudbar__dest {
+  width: 44px;
+  height: 44px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+.dd-hudbar__text {
+  flex-grow: 1;
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: var(--dd-label-size);
+  color: var(--dd-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dd-hudbar__dist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding-left: 14px;
+  padding-right: 14px;
+  margin-left: 12px;
+  border-radius: var(--dd-radius-pill);
+  background-color: var(--dd-cyan-100);
+  color: var(--dd-cyan-900);
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: 24px;
+}
+/* ---------- Meter rapuh ---------- */ .dd-meter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.dd-meter__seg {
+  width: 34px;
+  height: 16px;
+  margin-right: 6px;
+  border-radius: 8px;
+  border-width: 3px;
+  border-color: var(--dd-brick-500);
+  background-color: var(--dd-surface);
+}
+.dd-meter__seg.is-hit {
+  background-color: var(--dd-brick-500);
+}

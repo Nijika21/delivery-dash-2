@@ -1,0 +1,9 @@
+{
+  "name": "DeliveryDash.Classic",
+  "rootNamespace": "DeliveryDash.Classic",
+  "references": [
+    "Unity.InputSystem",
+    "UnityEngine.UI"
+  ],
+  "autoReferenced": true
+}

@@ -1,0 +1,1236 @@
+/* Screens.uss (Design/d4/screens.css) — dibangkitkan oleh Tools/handoff/build-handoff.mjs dari CSS desain. Jangan disunting tangan. */
+/* Catatan: .sc tanpa background-color (galeri memakai hijau rumput sebagai pengganti dunia). */
+/* Layar Delivery Dash 2 (Gerbang 4). Dibangun di atas tokens.css dan components.css (D1).
+   Subset CSS yang bisa dipindah ke USS; diperiksa Tools/art/lint-uss-css.mjs.
+   Resolusi acuan: landscape 1280x720, portrait 720x1280. Semua ukuran px acuan.
+   Tanpa gap: jarak antar-anak memakai margin. Posisi mutlak ditulis di atribut style tiap elemen. */
+/* ---------- bingkai ---------- */ .sc {
+  position: relative;
+  overflow: hidden;
+  color: var(--dd-text);
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: var(--dd-body-size);
+}
+.sc--l {
+  width: 1280px;
+  height: 720px;
+}
+.sc--p {
+  width: 720px;
+  height: 1280px;
+}
+.sc-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.sc-bg {
+  background-size: 100% 100%;
+}
+.sc-dim {
+  background-color: var(--dd-scrim);
+}
+.sc-center {
+  align-items: center;
+  justify-content: center;
+}
+.sc-abs {
+  position: absolute;
+}
+.sc-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sc-col {
+  display: flex;
+  flex-direction: column;
+}
+.sc-grow {
+  flex-grow: 1;
+}
+.sc-end {
+  justify-content: flex-end;
+}
+.ml-8 {
+  margin-left: 8px;
+}
+.ml-12 {
+  margin-left: 12px;
+}
+.ml-16 {
+  margin-left: 16px;
+}
+.mt-8 {
+  margin-top: 8px;
+}
+.mt-12 {
+  margin-top: 12px;
+}
+.mt-16 {
+  margin-top: 16px;
+}
+.mt-24 {
+  margin-top: 24px;
+}
+/* ---------- teks ---------- */ .sc-title {
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: var(--dd-title-size);
+  color: var(--dd-text);
+}
+.sc-heading {
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: var(--dd-heading-size);
+  color: var(--dd-text);
+}
+.sc-body {
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: var(--dd-body-size);
+  color: var(--dd-ink-700);
+}
+.sc-body-l {
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: var(--dd-body-l-size);
+  color: var(--dd-ink-700);
+}
+.sc-label {
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: var(--dd-label-size);
+  color: var(--dd-text);
+}
+.sc-muted {
+  color: var(--dd-text-muted);
+}
+.sc-on-dark {
+  color: var(--dd-surface);
+}
+/* ---------- logo dan tagline (tekstur di Unity) ---------- */ .sc-logo {
+  width: 520px;
+  height: 223px;
+}
+.sc-tagline {
+  display: flex;
+  align-self: flex-start;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-radius: 12px;
+  border-width: 3px;
+  border-bottom-width: 7px;
+  border-color: var(--dd-ink-900);
+  background-color: var(--dd-surface);
+  rotate: -1.5deg;
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: var(--dd-label-size);
+  color: var(--dd-ink-900);
+}
+/* ---------- kartu mode (lobby) ---------- */ .sc-modes {
+  display: flex;
+  flex-direction: column;
+}
+.sc-mode {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 108px;
+  margin-top: 12px;
+  padding-left: 12px;
+  padding-right: 16px;
+  border-radius: var(--dd-radius-md);
+  border-width: 3px;
+  border-bottom-width: 6px;
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.sc-mode.is-selected {
+  border-width: 4px;
+  border-bottom-width: 7px;
+  border-color: var(--dd-primary);
+  border-bottom-color: var(--dd-primary-edge);
+  background-color: var(--dd-cyan-50);
+}
+.sc-mode__thumb {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  border-width: 3px;
+  border-color: var(--dd-ink-900);
+  background-color: var(--dd-grass-500);
+  background-size: 100% 100%;
+}
+.sc-mode__text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 14px;
+}
+.sc-mode__name {
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: 28px;
+  color: var(--dd-text);
+}
+.sc-mode__desc {
+  margin-top: 2px;
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: 22px;
+  color: var(--dd-ink-700);
+}
+.sc-mode__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--dd-radius-pill);
+  border-width: 3px;
+  border-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.sc-mode.is-selected .sc-mode__check {
+  border-color: var(--dd-primary-edge);
+  background-color: var(--dd-primary);
+}
+.sc-mode__check-glyph {
+  width: 28px;
+  height: 28px;
+}
+/* ---------- ubin menu besar (garasi,
+hadiah) ---------- */ .sc-tile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 88px;
+  padding-left: 14px;
+  padding-right: 22px;
+  border-radius: var(--dd-radius-md);
+  border-width: 3px;
+  border-bottom-width: var(--dd-edge-button);
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: var(--dd-button-size);
+  color: var(--dd-text);
+}
+.sc-tile__icon {
+  width: 56px;
+  height: 56px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+.sc-badge {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  margin-left: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: var(--dd-radius-pill);
+  border-width: 3px;
+  border-color: var(--dd-surface);
+  background-color: var(--dd-reward);
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 20px;
+  color: var(--dd-ink-900);
+}
+.sc-badge--dot {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  margin-left: 0;
+}
+/* ---------- kepala halaman (garasi,
+hadiah) ---------- */ .sc-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 72px;
+}
+.sc-head__title {
+  flex-grow: 1;
+  margin-left: 18px;
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: 40px;
+  color: var(--dd-text);
+}
+.sc-back-glyph {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+.sc-page {
+  background-color: var(--dd-ground);
+}
+/* ---------- garasi ---------- */ .sc-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sc-preview__stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: var(--dd-radius-md);
+  border-width: 3px;
+  border-color: var(--dd-cyan-100);
+  background-color: var(--dd-cyan-50);
+}
+.sc-preview__truck {
+  background-size: 100% 100%;
+}
+.sc-preview__name {
+  margin-top: 12px;
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: 32px;
+  color: var(--dd-text);
+}
+.sc-preview__desc {
+  margin-top: 4px;
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: 22px;
+  color: var(--dd-ink-700);
+  -unity-text-align: upper-center;
+}
+.sc-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.dd-skin--sm {
+  width: 160px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.dd-skin--sm .dd-skin__preview {
+  width: 134px;
+  height: 134px;
+}
+.dd-skin--sm .dd-skin__truck {
+  width: 50px;
+  height: 106px;
+}
+.dd-skin--sm .dd-skin__lock {
+  left: 35px;
+  top: 35px;
+}
+.dd-skin__truck {
+  background-size: 100% 100%;
+}
+.sc-skin-gap {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+.sc-skin-last {
+  margin-bottom: 12px;
+}
+.sc--p .sc-skin-gap {
+  margin-right: 10px;
+}
+.sc-skin-gap-p {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.dd-skin__free {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4px;
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 20px;
+  color: var(--dd-green-800);
+}
+.dd-skin__mission {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4px;
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 20px;
+  color: var(--dd-brick-700);
+}
+.sc-scrollbar {
+  position: absolute;
+  width: 8px;
+  border-radius: 4px;
+  background-color: var(--dd-ink-300);
+}
+/* ---------- hadiah harian ---------- */ .sc-days {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.sc-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 144px;
+  height: 196px;
+  padding-top: 12px;
+  padding-bottom: 14px;
+  border-radius: var(--dd-radius-md);
+  border-width: 3px;
+  border-bottom-width: 7px;
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.sc-day--big {
+  width: 212px;
+  background-color: var(--dd-orange-100);
+  border-color: var(--dd-orange-300);
+  border-bottom-color: var(--dd-reward-edge);
+}
+.sc-day__name {
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 22px;
+  color: var(--dd-ink-700);
+}
+.sc-day__coin {
+  width: 64px;
+  height: 64px;
+}
+.sc-day__amount {
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: 30px;
+  color: var(--dd-text);
+}
+.sc-day__state {
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 20px;
+  color: var(--dd-ink-500);
+}
+.sc-day.is-claimed {
+  background-color: var(--dd-green-100);
+  border-color: #B7D9A6;
+  border-bottom-color: #8DBB77;
+}
+.sc-day.is-claimed .sc-day__state {
+  color: var(--dd-green-800);
+}
+.sc-day.is-ready {
+  border-width: 5px;
+  border-bottom-width: 9px;
+  border-color: var(--dd-yellow-500);
+  border-bottom-color: var(--dd-yellow-700);
+  background-color: #FFF8DC;
+}
+.sc-day.is-ready .sc-day__state {
+  color: var(--dd-orange-700);
+}
+.sc-day.is-next {
+  background-color: var(--dd-surface-2);
+}
+.sc-day__done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--dd-radius-pill);
+  border-width: 3px;
+  border-color: var(--dd-surface);
+  background-color: var(--dd-success);
+}
+/* ---------- HUD ---------- */ .sc-hud-dest {
+  width: 44px;
+  height: 44px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+.dd-hudbar__dist--orange {
+  background-color: var(--dd-orange-100);
+  color: var(--dd-orange-700);
+}
+.sc-mini {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 28px;
+  border-width: 5px;
+  border-bottom-width: 8px;
+  border-color: var(--dd-surface);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: #8DB86A;
+}
+.sc-mini__map {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sc-mini__overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sc-mini__hint {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--dd-radius-pill);
+  background-color: var(--dd-surface);
+}
+.sc-mini__hint-glyph {
+  width: 24px;
+  height: 24px;
+}
+.dd-iconbtn.is-on {
+  background-color: var(--dd-cyan-100);
+  border-color: var(--dd-cyan-300);
+  border-bottom-color: var(--dd-cyan-600);
+}
+.dd-chip--star {
+  background-color: #FFF6CF;
+  border-color: #EFD57A;
+  border-bottom-color: var(--dd-yellow-700);
+}
+.dd-chip--shield {
+  background-color: var(--dd-cyan-50);
+  border-color: var(--dd-cyan-300);
+  border-bottom-color: var(--dd-cyan-600);
+}
+.dd-chip--bolt {
+  background-color: var(--dd-orange-100);
+  border-color: var(--dd-orange-300);
+  border-bottom-color: var(--dd-reward-edge);
+}
+.dd-chip--big {
+  height: 60px;
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: 30px;
+}
+.sc-chips {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sc-chips .dd-chip {
+  margin-bottom: 10px;
+}
+/* Tombol kendali landscape: dua panah kiri,
+gas dan rem di kanan. */ .sc-ctl {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 30px;
+  border-width: 3px;
+  border-bottom-width: 8px;
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+  opacity: 0.92;
+}
+.sc-ctl--gas {
+  width: 132px;
+  height: 164px;
+  background-color: var(--dd-success);
+  border-color: #5FAE5C;
+  border-bottom-color: var(--dd-success-edge);
+}
+.sc-ctl--rem {
+  background-color: var(--dd-danger);
+  border-color: #CF7456;
+  border-bottom-color: var(--dd-danger-edge);
+}
+.sc-ctl__glyph {
+  width: 60px;
+  height: 60px;
+}
+.sc-ctl__label {
+  margin-top: 2px;
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: 22px;
+  color: var(--dd-surface);
+}
+.sc-ctl.is-disabled {
+  opacity: 0.4;
+}
+/* Kendali portrait: joystick mengambang + tombol MUNDUR. */ .sc-joy {
+  position: absolute;
+  width: 176px;
+  height: 176px;
+  border-radius: var(--dd-radius-pill);
+  border-width: 5px;
+  border-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(29, 42, 47, 0.22);
+}
+.sc-joy__knob {
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  border-radius: var(--dd-radius-pill);
+  border-width: 4px;
+  border-bottom-width: 7px;
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.sc-reverse {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 196px;
+  height: 92px;
+  border-radius: var(--dd-radius-pill);
+  border-width: 3px;
+  border-bottom-width: 8px;
+  border-color: #CF7456;
+  border-bottom-color: var(--dd-danger-edge);
+  background-color: var(--dd-danger);
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: 26px;
+  color: var(--dd-surface);
+}
+.sc-reverse__glyph {
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+}
+.sc-reverse.is-disabled {
+  opacity: 0.4;
+}
+.sc-coach {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  padding-left: 14px;
+  padding-right: 20px;
+  border-radius: var(--dd-radius-md);
+  background-color: rgba(29, 42, 47, 0.8);
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 22px;
+  color: var(--dd-surface);
+}
+.sc-coach__glyph {
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+/* Progres berhenti di zona: angka di chip,
+lingkar di dunia. */ .sc-dwell {
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: 26px;
+  color: var(--dd-green-800);
+  margin-left: 8px;
+}
+/* Sorotan kamera: teks tetap terang,
+hanya tombol yang redup. */ .sc-spot {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 14px;
+  padding-left: 26px;
+  padding-right: 26px;
+  border-radius: var(--dd-radius-lg);
+  border-width: 3px;
+  border-bottom-width: 7px;
+  border-color: var(--dd-cyan-300);
+  border-bottom-color: var(--dd-cyan-600);
+  background-color: var(--dd-surface);
+}
+.sc-spot__title {
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: 30px;
+  color: var(--dd-cyan-900);
+}
+.sc-timer {
+  width: 220px;
+  height: 12px;
+  margin-top: 10px;
+  border-radius: 6px;
+  background-color: var(--dd-cyan-100);
+}
+.sc-timer__fill {
+  height: 12px;
+  border-radius: 6px;
+  background-color: var(--dd-primary);
+}
+.sc-spot--warn {
+  border-color: #E9C24F;
+  border-bottom-color: var(--dd-yellow-700);
+}
+.sc-spot--warn .sc-spot__title {
+  color: var(--dd-ink-900);
+}
+/* ---------- peta besar ---------- */ .sc-bigmap {
+  position: absolute;
+  display: flex;
+  border-radius: var(--dd-radius-lg);
+  border-width: 3px;
+  border-bottom-width: var(--dd-edge-card);
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.sc-bigmap__map {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background-color: #8DB86A;
+  background-size: 100% 100%;
+}
+.sc-legend {
+  display: flex;
+  flex-direction: column;
+}
+.sc-legend__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 12px;
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 22px;
+  color: var(--dd-text);
+}
+.sc-legend__icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+/* ---------- menu jeda dan dialog panjang ---------- */ .sc-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+.sc-menu .dd-btn {
+  margin-top: 12px;
+  justify-content: flex-start;
+}
+.dd-dialog--wide {
+  width: 640px;
+}
+.sc-summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 18px;
+}
+.sc-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  margin-left: 6px;
+  margin-right: 6px;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  border-radius: var(--dd-radius-md);
+  background-color: var(--dd-surface-2);
+}
+.sc-stat__icon {
+  width: 44px;
+  height: 44px;
+}
+.sc-stat__num {
+  margin-top: 4px;
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: 32px;
+  color: var(--dd-text);
+}
+.sc-stat__label {
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: 20px;
+  color: var(--dd-ink-700);
+}
+/* ---------- cerita + kredit ---------- */ .sc-story {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding-top: 28px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: var(--dd-radius-lg);
+  border-width: 3px;
+  border-bottom-width: var(--dd-edge-card);
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.sc-story__body {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  margin-top: 12px;
+}
+/* .sc-story__scroll → ui:ScrollView di UXML (cerita bergulir kalau tidak muat,
+Gerbang Desain 4). */ .sc-story__scroll {
+  min-height: 0;
+}
+.sc-story__p {
+  margin-bottom: 14px;
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: 24px;
+  color: var(--dd-ink-700);
+}
+.sc-story__h {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: 26px;
+  color: var(--dd-text);
+}
+.sc-story__small {
+  margin-bottom: 8px;
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: 22px;
+  color: var(--dd-ink-500);
+}
+/* ---------- memuat ---------- */ .sc-load {
+  width: 420px;
+  height: 22px;
+  border-radius: 11px;
+  border-width: 3px;
+  border-color: var(--dd-ink-900);
+  background-color: var(--dd-surface);
+}
+.sc-load__fill {
+  height: 16px;
+  border-radius: 8px;
+  background-color: var(--dd-reward);
+}
+/* ---------- Classic (1.0) ---------- */ .sc-classic {
+  background-color: #9FC7E8;
+}
+.sc-classic__ground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7FA85A;
+}
+.sc-classic__road {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #4A4D4B;
+}
+.sc-classic__title {
+  -unity-font-definition: url("../Fonts/Fredoka-Bold SDF.asset");
+  font-size: 72px;
+  color: var(--dd-surface);
+  text-shadow: 0 4px 0 #1D2A2F;
+}
+.sc-classic__sub {
+  margin-top: 6px;
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 24px;
+  color: var(--dd-ink-900);
+}
+.sc-classic .dd-btn {
+  width: 340px;
+  margin-top: 16px;
+}
+/* ---------- lobby v2: satu tombol utama,
+fitur lain jadi ikon ---------- */ /* Tombol samping (garasi,
+hadiah): ikon besar + label,
+bisa diberi titik merah. */ .sc-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 112px;
+}
+.sc-side__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 26px;
+  border-width: 3px;
+  border-bottom-width: 7px;
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.sc-side__glyph {
+  width: 60px;
+  height: 60px;
+}
+.sc-side__label {
+  margin-top: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 2px;
+  border-radius: var(--dd-radius-pill);
+  background-color: rgba(29, 42, 47, 0.78);
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 22px;
+  color: var(--dd-surface);
+}
+.sc-dot {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--dd-radius-pill);
+  border-width: 4px;
+  border-color: var(--dd-surface);
+  background-color: #E5392F;
+}
+/* Pemilih kota: kartu kecil yang menampilkan kota aktif,
+membuka daftar kota. */ .sc-modebtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 88px;
+  padding-left: 10px;
+  padding-right: 14px;
+  border-radius: var(--dd-radius-md);
+  border-width: 3px;
+  border-bottom-width: 6px;
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.sc-modebtn__thumb {
+  width: 62px;
+  height: 62px;
+  border-radius: 12px;
+  border-width: 3px;
+  border-color: var(--dd-ink-900);
+  background-size: 100% 100%;
+}
+.sc-modebtn__text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 12px;
+}
+.sc-modebtn__small {
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 20px;
+  color: var(--dd-ink-500);
+}
+.sc-modebtn__name {
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: 28px;
+  color: var(--dd-text);
+}
+.sc-modebtn__chev {
+  width: 30px;
+  height: 30px;
+}
+/* Tombol main: paling besar di layar. */ .sc-play {
+  height: 104px;
+  border-bottom-width: 9px;
+  border-radius: 26px;
+  font-size: 44px;
+}
+.sc-play .dd-btn__icon {
+  width: 44px;
+  height: 44px;
+}
+/* Pilih kota */ .sc-mapcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+  padding-bottom: 16px;
+  padding-left: 14px;
+  padding-right: 14px;
+  border-radius: var(--dd-radius-lg);
+  border-width: 3px;
+  border-bottom-width: 8px;
+  border-color: var(--dd-card-line);
+  border-bottom-color: var(--dd-card-edge);
+  background-color: var(--dd-surface);
+}
+.sc-mapcard.is-selected {
+  border-width: 5px;
+  border-bottom-width: 9px;
+  border-color: var(--dd-primary);
+  border-bottom-color: var(--dd-primary-edge);
+  background-color: var(--dd-cyan-50);
+}
+.sc-mapcard__img {
+  border-radius: 16px;
+  border-width: 3px;
+  border-color: var(--dd-ink-900);
+  background-color: var(--dd-grass-500);
+  background-size: 100% 100%;
+}
+.sc-mapcard__name {
+  margin-top: 12px;
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: 30px;
+  color: var(--dd-text);
+}
+.sc-mapcard__desc {
+  margin-top: 2px;
+  -unity-font-definition: url("../Fonts/Andika-Regular SDF.asset");
+  font-size: 22px;
+  color: var(--dd-ink-700);
+  -unity-text-align: upper-center;
+}
+.sc-mapcard--row {
+  flex-direction: row;
+  padding-top: 12px;
+  padding-bottom: 14px;
+}
+.sc-mapcard--row .sc-mapcard__name {
+  margin-top: 0;
+}
+.sc-mapcard--row .sc-mapcard__desc {
+  -unity-text-align: upper-left;
+}
+/* Pengaturan */ .sc-set {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  margin-top: 16px;
+}
+.sc-set__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80px;
+  padding-left: 16px;
+  padding-right: 12px;
+  margin-top: 10px;
+  border-radius: var(--dd-radius-md);
+  background-color: var(--dd-surface-2);
+}
+.sc-set__icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+.sc-set__label {
+  flex-grow: 1;
+  -unity-font-definition: url("../Fonts/Fredoka-SemiBold SDF.asset");
+  font-size: 28px;
+  color: var(--dd-text);
+}
+.sc-set__chev {
+  width: 28px;
+  height: 28px;
+}
+.sc-set__rule {
+  height: 3px;
+  margin-top: 22px;
+  border-radius: 2px;
+  background-color: var(--dd-ink-100);
+}
+.sc-set__danger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  margin-top: 14px;
+  -unity-font-definition: url("../Fonts/Andika-Bold SDF.asset");
+  font-size: 22px;
+  color: var(--dd-brick-700);
+}
+.dd-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 96px;
+  height: 52px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: var(--dd-radius-pill);
+  background-color: var(--dd-ink-300);
+  transition: background-color 0.16s ease-out;
+}
+/* Kenop digeser dengan translate (bisa dianimasikan),
+bukan justify-content: 96 − 2×5 − 42 = 44 px. */ .dd-toggle__knob {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--dd-radius-pill);
+  background-color: var(--dd-surface);
+  transition: translate 0.16s ease-out;
+}
+.dd-toggle.is-on {
+  background-color: var(--dd-success);
+}
+.dd-toggle.is-on .dd-toggle__knob {
+  translate: 44px 0;
+}
+/* Hadiah harian sebagai popup */ .sc-day--sm {
+  width: 124px;
+  height: 178px;
+}
+.sc-day--sm.sc-day--big {
+  width: 172px;
+}
+.sc-day--sm .sc-day__done {
+  top: -16px;
+  right: -16px;
+  width: 38px;
+  height: 38px;
+}
+.sc-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+/* .sc-anno: catatan untuk peninjau di galeri,
+bukan bagian UI game (tidak ikut ke UXML). */ .sc-anno {
+  border-width: 2px;
+  border-color: #B98C12;
+}
+/* ---------- Keadaan tekan (D5) ---------- Semua yang bisa diketuk punya :active (penunjuk ditahan) dan .is-pressed (dipasang kode untuk tombol tahan GAS/REM). Pola 3D sama dengan .dd-btn: permukaan turun sebesar (tepi bawah − 2 px),
+tepi bawah jadi 2 px,
+tinggi kotak berkurang sama besar; margin-bottom bertambah sama besar sehingga kotak margin tetap: dasar tidak bergeser baik elemen disusun dari atas,
+di tengah (align-items: center),
+maupun ditambat ke bawah (bottom: …),
+dan tetangganya diam. */ .sc-play:active,
+.sc-play.is-pressed {
+  height: 97px;
+  translate: 0 7px;
+  border-bottom-width: 2px;
+  margin-bottom: 7px;
+}
+.sc-head__back {
+  height: 64px;
+}
+.sc-head__back:active,
+.sc-head__back.is-pressed {
+  height: 61px;
+  translate: 0 3px;
+  border-bottom-width: 2px;
+  margin-bottom: 3px;
+}
+.sc-side__btn,
+.sc-modebtn,
+.sc-tile,
+.sc-mapcard,
+.dd-skin,
+.sc-ctl {
+  transition: translate 0.08s, border-bottom-width 0.08s, height 0.08s, margin-bottom 0.08s;
+}
+.sc-side__btn:hover,
+.sc-modebtn:hover,
+.sc-tile:hover,
+.sc-mapcard:hover,
+.dd-skin:hover {
+  translate: 0 -2px;
+}
+.sc-side__btn:active,
+.sc-side__btn.is-pressed {
+  translate: 0 5px;
+  height: 91px;
+  border-bottom-width: 2px;
+  margin-bottom: 5px;
+}
+.sc-modebtn:active,
+.sc-modebtn.is-pressed {
+  translate: 0 4px;
+  height: 84px;
+  border-bottom-width: 2px;
+  margin-bottom: 4px;
+}
+.sc-tile:active,
+.sc-tile.is-pressed {
+  translate: 0 4px;
+  height: 84px;
+  border-bottom-width: 2px;
+  margin-bottom: 4px;
+}
+.sc-mapcard:active,
+.sc-mapcard.is-pressed {
+  translate: 0 6px;
+  border-bottom-width: 2px;
+  margin-bottom: 6px;
+}
+.sc-mapcard.is-selected:active,
+.sc-mapcard.is-selected.is-pressed {
+  translate: 0 7px;
+  margin-bottom: 7px;
+}
+.dd-skin:active,
+.dd-skin.is-pressed {
+  translate: 0 6px;
+  border-bottom-width: 2px;
+  margin-bottom: 6px;
+}
+.dd-skin.sc-skin-gap:active,
+.dd-skin.sc-skin-gap.is-pressed,
+.dd-skin.sc-skin-last:active,
+.dd-skin.sc-skin-last.is-pressed {
+  margin-bottom: 18px;
+}
+.dd-skin.sc-skin-gap-p:active,
+.dd-skin.sc-skin-gap-p.is-pressed {
+  margin-bottom: 22px;
+}
+.sc-ctl:active,
+.sc-ctl.is-pressed {
+  translate: 0 6px;
+  height: 114px;
+  border-bottom-width: 2px;
+  margin-bottom: 6px;
+  opacity: 1;
+}
+.sc-ctl--gas:active,
+.sc-ctl--gas.is-pressed {
+  height: 158px;
+}
+.sc-mini {
+  transition: scale 0.08s;
+}
+.sc-mini:active,
+.sc-mini.is-pressed {
+  scale: 0.97 0.97;
+}
+.sc-set__row {
+  transition: background-color 0.08s;
+}
+.sc-set__row:active,
+.sc-set__row.is-pressed {
+  background-color: var(--dd-ink-100);
+}
+.sc-set__danger {
+  transition: opacity 0.08s;
+}
+.sc-set__danger:active,
+.sc-set__danger.is-pressed {
+  opacity: 0.6;
+}
+/* ---------- fokus keyboard/kontroler (usulan fokus.keyboard) ---------- Kelas .is-focus dipasang kode hanya saat navigasi memakai keyboard/kontroler,
+dan dilepas pada input sentuh/mouse. Membesar 5%: tanpa warna baru dan tanpa menggeser tata letak; pola tekan 3D tetap berlaku di atasnya. */ .dd-btn.is-focus,
+.dd-iconbtn.is-focus,
+.sc-side__btn.is-focus,
+.sc-modebtn.is-focus,
+.sc-mapcard.is-focus,
+.dd-skin.is-focus,
+.sc-tile.is-focus,
+.sc-set__row.is-focus,
+.sc-set__danger.is-focus,
+.dd-toggle.is-focus,
+.sc-mini.is-focus {
+  scale: 1.05 1.05;
+}

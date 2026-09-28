@@ -1,0 +1,165 @@
+{
+  "id": "blok-paket",
+  "name": "Blok Paket",
+  "seed": 2027,
+  "extent": [-114, -94, 112, 90],
+  "roadWidth": 6,
+  "fillet": 2.6,
+  "plazaFillet": 1.4,
+  "minRadius": { "utama": 9, "kampung": 7 },
+  "minJunctionSpacing": 18,
+  "minRoadGap": 13,
+  "houseRange": [64, 80],
+  "lampSpacing": 13,
+  "lampSpacingKampung": 18,
+  "vergeSpacing": 3.6,
+  "vergeChance": 0.85,
+  "vergeDepth": 2.6,
+  "treeBand": 9,
+  "decor": { "spacing": 4, "groveScale": 16, "sparse": 0.6, "bushAbove": 0.38, "treeAbove": 0.56, "flowers": 0.6 },
+  "colorways": [
+    "bata",
+    "laut",
+    "daun",
+    "senja"
+  ],
+  "grid": {
+    "xs": [-88, -50, -18, 22, 50, 86],
+    "ys": [-68, -38, -6, 30, 64],
+    "cornerRadius": 12,
+    "corners": { "5_4": 13, "0_4": 14, "5_0": 10, "0_0": 12 },
+    "columns": [
+      "Jalan Melati",
+      "Jalan Mawar",
+      "Jalan Lengkung",
+      "Jalan Kenanga",
+      "Jalan Dahlia",
+      "Jalan Teratai"
+    ],
+    "rows": [
+      "Jalan Merpati",
+      "Jalan Kenari",
+      "Jalan Raya",
+      "Jalan Nuri",
+      "Jalan Jalak"
+    ],
+    "utama": { "columns": [2], "rows": [2] },
+    "omit": [
+      "v1_3",
+      "h4_3",
+      "v3_0",
+      "h4_1"
+    ],
+    "shift": { "g2_1": [4, 0], "g2_2": [8, 0], "g2_3": [6, 0], "g3_2": [3, 0] }
+  },
+  "nodes": {},
+  "roads": [],
+  "districts": [
+    {
+      "id": "pusat",
+      "name": "Pusat Kota",
+      "center": [4, -4],
+      "core": { "rect": [-50, -38, 50, 30] },
+      "houses": 13,
+      "spacing": 11,
+      "types": { "duaLantai": 3, "warung": 2, "perisai": 2, "pelana": 1 },
+      "tone": 0
+    },
+    {
+      "id": "taman",
+      "name": "Blok Taman",
+      "center": [-60, 50],
+      "houses": 14,
+      "types": { "beranda": 3, "pelana": 2, "perisai": 1 },
+      "tone": 8,
+      "decor": { "treeAbove": 0.5 }
+    },
+    {
+      "id": "kolam",
+      "name": "Blok Kolam",
+      "center": [64, 46],
+      "houses": 13,
+      "types": { "panggung": 2, "beranda": 2, "pelana": 2 },
+      "tone": -4
+    },
+    {
+      "id": "sekolah",
+      "name": "Blok Sekolah",
+      "center": [-30, -60],
+      "houses": 14,
+      "types": { "duaLantai": 3, "perisai": 2, "pelana": 1 },
+      "tone": 4
+    },
+    {
+      "id": "pasar",
+      "name": "Blok Pasar",
+      "center": [68, -40],
+      "houses": 13,
+      "types": { "warung": 3, "duaLantai": 2, "pelana": 1 },
+      "tone": 2,
+      "decor": { "rocks": 0.4 }
+    }
+  ],
+  "depot": {
+    "plaza": { "center": [-69, -27], "size": [19, 10], "radius": 0.6 },
+    "driveway": { "from": [-69, -31], "to": [-69, -38], "road": "h0_1", "width": 5 },
+    "building": { "center": [-69, -17], "size": [17, 10] },
+    "pickup": [-69, -24.7],
+    "finish": { "center": [-74.6, -27.4], "size": [7.8, 4.2], "angle": 90 },
+    "start": { "pos": [-64.5, -28.6], "heading": 90 },
+    "letterDrop": [-63.6, -24.6]
+  },
+  "reserved": [
+    { "rect": [-80, 38, -26, 56] },
+    { "circle": [-82, -22, 3.2] },
+    { "rect": [0, -62, 30, -44] },
+    { "circle": [68, -24, 7] }
+  ],
+  "lakes": [
+    {
+      "id": "kolam",
+      "name": "Kolam Teratai",
+      "smooth": 3,
+      "shore": [[60, 36], [66, 31], [74, 32], [79, 38], [80, 48], [77, 56], [70, 59], [62, 57], [58, 50], [58, 42]]
+    }
+  ],
+  "features": [
+    { "kind": "prop", "sprite": "taman", "at": [-62, 47] },
+    { "kind": "prop", "sprite": "taman", "at": [-40, 48] },
+    { "kind": "prop", "sprite": "bangku", "at": [-51, 43] },
+    { "kind": "prop", "sprite": "bangku", "at": [-51, 52] },
+    {
+      "kind": "cluster",
+      "center": [-72, 52],
+      "radius": 4,
+      "count": 4,
+      "sprites": { "pohon": 2, "pohon2": 2 },
+      "group": "taman"
+    },
+    {
+      "kind": "cluster",
+      "center": [-74, 43],
+      "radius": 4,
+      "count": 4,
+      "sprites": { "bedeng": 2, "semak": 1, "pohon2": 1 },
+      "group": "taman"
+    },
+    {
+      "kind": "cluster",
+      "center": [-30, 44],
+      "radius": 4,
+      "count": 4,
+      "sprites": { "bedeng": 3, "semak": 1 },
+      "group": "taman"
+    },
+    { "kind": "prop", "sprite": "dermaga", "at": [68, 31.6], "onShore": true },
+    { "kind": "prop", "sprite": "bangku", "at": [62, 28] },
+    { "kind": "prop", "sprite": "papanSekolah", "at": [8, -50] },
+    { "kind": "prop", "sprite": "taman", "at": [22, -53] },
+    { "kind": "prop", "sprite": "lapak", "at": [63, -20] },
+    { "kind": "prop", "sprite": "lapak", "at": [68, -26] },
+    { "kind": "prop", "sprite": "lapak", "at": [73, -20] }
+  ],
+  "houseSpacing": 9,
+  "weights": { "distance": 0.65, "k": 3, "radius": 22, "min": 0.35, "max": 2.4 }
+}

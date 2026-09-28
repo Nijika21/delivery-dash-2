@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 01. Layar memuat (portrait 720x1280) — dibangkitkan dari Design/d4, jangan disunting tangan.
+     ID inventaris: A01 M10
+     Catatan: Logo, tagline, dan bar muat saat kota disiapkan. -->
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../Styles/DeliveryDash.uss" />
+    <ui:VisualElement name="layar" class="sc sc--p" picking-mode="Ignore">
+        <!-- dunia: digambar kamera game, bukan UI (acuan: a-w-lobi-p) -->
+        <ui:VisualElement name="dim" class="sc-fill sc-dim" style="background-color: rgba(29,42,47,.35)" picking-mode="Ignore" />
+        <ui:VisualElement name="logo" class="sc-abs sc-logo logo" style="left: 60px; top: 360px; width: 600px; height: 257px" picking-mode="Ignore" />
+        <ui:VisualElement name="@kotak" class="sc-abs sc-row" style="left: 0; right: 0; justify-content: center; top: 640px" picking-mode="Ignore">
+            <ui:VisualElement name="@grup" class="sc-col" style="align-items: center" picking-mode="Ignore">
+                <ui:Label name="tagline" class="sc-tagline" style="align-self: center" text="Keliling kota, antar sampai tujuan!" picking-mode="Ignore" />
+                <ui:VisualElement name="load" class="sc-load mt-24" picking-mode="Ignore">
+                    <ui:VisualElement name="fill" class="sc-load__fill" style="width: 62%" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Label name="label" class="sc-label sc-on-dark mt-12" text="Menyiapkan kota…" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

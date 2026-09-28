@@ -1,0 +1,570 @@
+{
+  "id": "kota-paket",
+  "name": "Kota Paket",
+  "layoutHash": "55ef543d70944a09",
+  "pass": true,
+  "bakeMs": 7127,
+  "counts": {
+    "houses": 72,
+    "perDistrict": {
+      "Kota Tengah": 12,
+      "Ladang": 12,
+      "Lembah Danau": 12,
+      "Kebun": 12,
+      "Pesisir": 13,
+      "Bukit Kapur": 11
+    },
+    "props": 2171,
+    "perKind": {
+      "airMancur": 1,
+      "semak": 552,
+      "bedeng": 209,
+      "papanSekolah": 1,
+      "taman": 1,
+      "lapak": 6,
+      "dermaga": 3,
+      "bangku": 12,
+      "batu": 228,
+      "pohon2": 537,
+      "lampu": 47,
+      "kotakSurat": 72,
+      "pohon": 502
+    },
+    "roads": 30,
+    "junctions": 19,
+    "roadLength": 1778,
+    "colliders": 3005,
+    "markings": 553,
+    "fieldSize": [
+      1201,
+      1201
+    ]
+  },
+  "screens": {
+    "landscape": {
+      "min": 4,
+      "max": 11,
+      "minAt": [
+        8.807280174701168,
+        -11.197395898695621
+      ],
+      "maxAt": [
+        -78,
+        10.444444444444446
+      ]
+    },
+    "portrait": {
+      "min": 4,
+      "max": 12,
+      "minAt": [
+        8.807280174701168,
+        -11.197395898695621
+      ],
+      "maxAt": [
+        -87.8720877801045,
+        30
+      ]
+    }
+  },
+  "routes": {
+    "median": 123.10915295340614,
+    "max": 251.3227882972344,
+    "mean": 128.54584849671738,
+    "seconds": {
+      "median": 18.939869685139406,
+      "max": 38.665044353420676
+    },
+    "speed": 6.5,
+    "perHouse": [
+      40,
+      123.1,
+      108,
+      39,
+      90.9,
+      4.3,
+      64.7,
+      64.7,
+      76,
+      96.8,
+      91.8,
+      68.5,
+      111.7,
+      111.5,
+      87.5,
+      44,
+      85.8,
+      52.7,
+      57.7,
+      97.6,
+      84.2,
+      87.7,
+      102.1,
+      37.7,
+      174.8,
+      147.6,
+      141,
+      101.8,
+      83,
+      128.9,
+      123.5,
+      157.3,
+      88.1,
+      106,
+      137.6,
+      116,
+      251.3,
+      203.3,
+      201.5,
+      175.8,
+      237,
+      174.5,
+      204.5,
+      128.1,
+      165.1,
+      219.5,
+      250.8,
+      188.3,
+      184.5,
+      131.5,
+      158.7,
+      153.8,
+      174,
+      114,
+      125.5,
+      144,
+      113.4,
+      168.8,
+      187.8,
+      121.5,
+      116.8,
+      168.3,
+      207.4,
+      108,
+      140.8,
+      190.8,
+      108.7,
+      89.3,
+      187.4,
+      154.5,
+      89.3,
+      183.3
+    ]
+  },
+  "junctions": [
+    {
+      "id": "RW",
+      "pos": [
+        -29.999609337612345,
+        -18
+      ],
+      "degree": 3,
+      "minGap": 94
+    },
+    {
+      "id": "RN",
+      "pos": [
+        -11.702284992318395,
+        1.927035195325157
+      ],
+      "degree": 3,
+      "minGap": 94
+    },
+    {
+      "id": "RE",
+      "pos": [
+        8.80728017470117,
+        -11.197395898695627
+      ],
+      "degree": 3,
+      "minGap": 93
+    },
+    {
+      "id": "RS",
+      "pos": [
+        -11.7022849923184,
+        -37.92703519532515
+      ],
+      "degree": 3,
+      "minGap": 92
+    },
+    {
+      "id": "TN",
+      "pos": [
+        -12,
+        24
+      ],
+      "degree": 3,
+      "minGap": 84
+    },
+    {
+      "id": "TX",
+      "pos": [
+        24,
+        26
+      ],
+      "degree": 3,
+      "minGap": 109
+    },
+    {
+      "id": "TE",
+      "pos": [
+        30,
+        -6
+      ],
+      "degree": 3,
+      "minGap": 83
+    },
+    {
+      "id": "DW",
+      "pos": [
+        -78,
+        -14
+      ],
+      "degree": 4,
+      "minGap": 83
+    },
+    {
+      "id": "F1",
+      "pos": [
+        -78,
+        30
+      ],
+      "degree": 3,
+      "minGap": 90
+    },
+    {
+      "id": "F3",
+      "pos": [
+        -128,
+        -14
+      ],
+      "degree": 3,
+      "minGap": 90
+    },
+    {
+      "id": "F5",
+      "pos": [
+        -78,
+        -60
+      ],
+      "degree": 3,
+      "minGap": 90
+    },
+    {
+      "id": "L2",
+      "pos": [
+        -24,
+        58
+      ],
+      "degree": 4,
+      "minGap": 66
+    },
+    {
+      "id": "K1",
+      "pos": [
+        40,
+        72
+      ],
+      "degree": 4,
+      "minGap": 79
+    },
+    {
+      "id": "K2",
+      "pos": [
+        96,
+        58
+      ],
+      "degree": 3,
+      "minGap": 103
+    },
+    {
+      "id": "P1",
+      "pos": [
+        86,
+        -8
+      ],
+      "degree": 3,
+      "minGap": 94
+    },
+    {
+      "id": "P2",
+      "pos": [
+        56,
+        -62
+      ],
+      "degree": 3,
+      "minGap": 83
+    },
+    {
+      "id": "B1",
+      "pos": [
+        -8,
+        -62
+      ],
+      "degree": 3,
+      "minGap": 91
+    },
+    {
+      "id": "B2",
+      "pos": [
+        -44,
+        -92
+      ],
+      "degree": 3,
+      "minGap": 105
+    },
+    {
+      "id": "L3",
+      "pos": [
+        -72,
+        56
+      ],
+      "degree": 3,
+      "minGap": 81
+    }
+  ],
+  "checks": [
+    {
+      "id": "buntu",
+      "label": "Simpul berderajat 1 (jalan buntu)",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "komponen",
+      "label": "Komponen jaringan",
+      "pass": true,
+      "value": 1,
+      "limit": 1
+    },
+    {
+      "id": "jembatan",
+      "label": "Ruas jembatan (kalau diputus, kota terbelah)",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "sudut",
+      "label": "Sudut terkecil antar-jalan di persimpangan",
+      "pass": true,
+      "value": "66° (L2)",
+      "limit": "≥ 60°"
+    },
+    {
+      "id": "patah",
+      "label": "Sambungan berderajat 2 yang menekuk",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "derajat",
+      "label": "Derajat persimpangan terbesar",
+      "pass": true,
+      "value": 4,
+      "limit": "≤ 4"
+    },
+    {
+      "id": "jarak-simpang",
+      "label": "Jarak terdekat antarpersimpangan",
+      "pass": true,
+      "value": "21.8 (RE–TE)",
+      "limit": "≥ 18"
+    },
+    {
+      "id": "radius-utama",
+      "label": "Tikungan tertajam jalan utama",
+      "pass": true,
+      "value": "13.5 (bukit di -12,-42)",
+      "limit": "≥ 9"
+    },
+    {
+      "id": "radius-kampung",
+      "label": "Tikungan tertajam jalan kampung",
+      "pass": true,
+      "value": "12.0 (ladang-s di -122,-58)",
+      "limit": "≥ 7"
+    },
+    {
+      "id": "celah-jalan",
+      "label": "Jarak terdekat dua jalan di luar persimpangan",
+      "pass": true,
+      "value": "16.9 (pinus / embun)",
+      "limit": "≥ 13"
+    },
+    {
+      "id": "rumah-total",
+      "label": "Jumlah rumah",
+      "pass": true,
+      "value": 72,
+      "limit": "64–80"
+    },
+    {
+      "id": "rumah-kawasan",
+      "label": "Kuota rumah tiap kawasan terpenuhi",
+      "pass": true,
+      "value": "semua",
+      "limit": "semua"
+    },
+    {
+      "id": "fitur-aman",
+      "label": "Fitur tetap (lapak, taman, dermaga…) tidak di jalan/air/rumah",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "sel-kosong",
+      "label": "Sel rumput 12×12 tanpa satu fitur pun",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "sel-padat",
+      "label": "Sel 12×12 dengan lebih dari 9 properti",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "layar-landscape",
+      "label": "Objek (properti + rumah) per layar landscape (23.1×13)",
+      "pass": true,
+      "value": "4–11 (tersepi di 9,-11)",
+      "limit": "4–30"
+    },
+    {
+      "id": "layar-portrait",
+      "label": "Objek (properti + rumah) per layar portrait (12.4×22)",
+      "pass": true,
+      "value": "4–12 (tersepi di 9,-11)",
+      "limit": "4–30"
+    },
+    {
+      "id": "pohon-tikungan",
+      "label": "Pohon di tikungan dalam atau terlalu dekat jalan",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "pita-pohon",
+      "label": "Potongan tepi peta tanpa pohon",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "properti-jalan",
+      "label": "Properti menyentuh aspal",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "titik-singgah",
+      "label": "Titik singgah jalanan (bantuan warga, cap, kilat tambahan)",
+      "pass": true,
+      "value": 25,
+      "limit": "≥ 8"
+    },
+    {
+      "id": "dinding-pita",
+      "label": "Muka dinding tabrakan di pita pinggir jalan (SDF)",
+      "pass": true,
+      "value": "0.00 s.d. 0.45",
+      "limit": "-0,05 s.d. 0,5"
+    },
+    {
+      "id": "danau-jalan",
+      "label": "Jarak tepi danau ke aspal",
+      "pass": true,
+      "value": "2.5",
+      "limit": "≥ 2"
+    },
+    {
+      "id": "marka",
+      "label": "Marka di dalam area persimpangan",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "anchor",
+      "label": "Anchor depot (ambil, mulai, selesai kerja, surat, gudang) aman",
+      "pass": true,
+      "value": "aman",
+      "limit": "aman"
+    },
+    {
+      "id": "parkir-jalan",
+      "label": "Jarak tepi parkiran depot ke aspal jalan (hanya lewat jalan masuk)",
+      "pass": true,
+      "value": "4.9 (-63,-8)",
+      "limit": "≥ 3"
+    },
+    {
+      "id": "parkir-luas",
+      "label": "Luas parkiran depot",
+      "pass": true,
+      "value": "19×10 = 190",
+      "limit": "≤ 240"
+    },
+    {
+      "id": "peluang",
+      "label": "Peluang antar per sepertiga jarak (dekat/sedang/jauh)",
+      "pass": true,
+      "value": "45% / 32% / 23%, rasio 5.8×",
+      "limit": "tiap 20–46%, dekat ≥ jauh, rasio ≤ 8×"
+    }
+  ],
+  "weights": {
+    "params": {
+      "a": 0.55,
+      "k": 3,
+      "R": 22,
+      "lo": 0.35,
+      "hi": 2.4
+    },
+    "median": 123.1,
+    "terciles": [
+      {
+        "name": "dekat",
+        "from": 4.3,
+        "to": 101.8,
+        "houses": 24,
+        "share": 0.4518273382530315
+      },
+      {
+        "name": "sedang",
+        "from": 102.1,
+        "to": 153.8,
+        "houses": 24,
+        "share": 0.3186724189438029
+      },
+      {
+        "name": "jauh",
+        "from": 154.5,
+        "to": 251.3,
+        "houses": 24,
+        "share": 0.22950024280316603
+      }
+    ],
+    "expected": 112.53998936717481,
+    "uniform": 128.54722222222222,
+    "ratio": 5.799339391885736,
+    "minP": 0.00485950484591807,
+    "maxP": 0.028181917877992287,
+    "perDistrict": {
+      "Kota Tengah": 0.1884827403791961,
+      "Ladang": 0.2603550794279878,
+      "Lembah Danau": 0.14479884273202806,
+      "Kebun": 0.11473627764881639,
+      "Pesisir": 0.13936170432238462,
+      "Bukit Kapur": 0.1522653554895873
+    }
+  }
+}

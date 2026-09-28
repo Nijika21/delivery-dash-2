@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 26. Lobby 1.0 (pintu Classic) (landscape 1280x720) — dibangkitkan dari Design/d4, jangan disunting tangan.
+     ID inventaris: K11 M08
+     Catatan: Lobby baru versi 1.0: Mulai dan Keluar. Dari 2.0, Keluar kembali ke lobby 2.0. Portrait: usulan minta putar layar. -->
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../Styles/DeliveryDash.uss" />
+    <ui:VisualElement name="layar" class="sc sc--l" picking-mode="Ignore">
+        <ui:VisualElement name="classic" class="sc-fill sc-classic" picking-mode="Ignore" />
+        <ui:VisualElement name="ground" class="sc-classic__ground" style="height: 300px" picking-mode="Ignore" />
+        <ui:VisualElement name="road" class="sc-classic__road" style="top: 500px; height: 120px" picking-mode="Ignore" />
+        <ui:VisualElement name="jarak" class="sc-abs" style="left: 0; right: 0; top: 556px; height: 6px; background-color: #EFE9D6" picking-mode="Ignore" />
+        <ui:VisualElement name="gambar:pohon" class="sc-bg sc-abs a-pohon" style="left: 105px; top: 297px; width: 120px; height: 171px" picking-mode="Ignore" />
+        <ui:VisualElement name="gambar:pohon2" class="sc-bg sc-abs a-pohon2" style="left: 1035px; top: 300px; width: 160px; height: 170px" picking-mode="Ignore" />
+        <ui:VisualElement name="gambar:semak-1" class="sc-bg sc-abs a-semak" style="left: 877px; top: 400px; width: 95px; height: 90px" picking-mode="Ignore" />
+        <ui:VisualElement name="gambar:semak-2" class="sc-bg sc-abs a-semak" style="left: 267px; top: 410px; width: 85px; height: 80px" picking-mode="Ignore" />
+        <ui:VisualElement name="gambar:truk" class="sc-bg sc-abs a-truk" style="left: 560px; top: 470px; width: 84px; height: 180px; rotate: 90deg" picking-mode="Ignore" />
+        <ui:VisualElement name="gambar:paket" class="sc-bg sc-abs a-paket" style="left: 430px; top: 530px; width: 64px; height: 64px" picking-mode="Ignore" />
+        <ui:VisualElement name="@kotak" class="sc-abs sc-row" style="left: 0; right: 0; justify-content: center; top: 70px" picking-mode="Ignore">
+            <ui:VisualElement name="@grup" class="sc-col" style="align-items: center" picking-mode="Ignore">
+                <ui:Label name="title" class="sc-classic__title" text="Delivery Dash" picking-mode="Ignore" />
+                <ui:Label name="sub" class="sc-classic__sub" text="Classic · versi 1.0" picking-mode="Ignore" />
+                <ui:VisualElement name="btn:mulai" class="dd-btn dd-btn--success" style="margin-top: 28px">
+                    <ui:VisualElement name="ikon-play" class="dd-btn__icon ikon ikon--i-play" picking-mode="Ignore" />
+                    <ui:Label name="teks" text="Mulai" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:VisualElement name="btn:keluar" class="dd-btn dd-btn--quiet">
+                    <ui:VisualElement name="ikon-exit" class="dd-btn__icon ikon ikon--i-exit" picking-mode="Ignore" />
+                    <ui:Label name="teks" text="Keluar" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <!-- anotasi peninjau (bukan UI): Keluar di sini kembali ke lobby 2.0 -->
+    </ui:VisualElement>
+</ui:UXML>

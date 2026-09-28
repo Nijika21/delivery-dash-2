@@ -1,0 +1,92 @@
+/* Tokens.uss (Design/d1/tokens.css) — dibangkitkan oleh Tools/handoff/build-handoff.mjs dari CSS desain. Jangan disunting tangan. */
+/* Dibangkitkan dari Design/tokens.json — jangan diedit langsung. */
+:root {
+  --dd-cyan-50: #EAF8FD;
+  --dd-cyan-100: #CDEFFB;
+  --dd-cyan-300: #7FD7F5;
+  --dd-cyan-500: #1DB4E8;
+  --dd-cyan-600: #0A8DC2;
+  --dd-cyan-700: #086E98;
+  --dd-cyan-900: #0B3F57;
+  --dd-orange-100: #FDE9CC;
+  --dd-orange-300: #F9C278;
+  --dd-orange-500: #F09A2C;
+  --dd-orange-700: #C46A12;
+  --dd-brick-100: #F6DDD3;
+  --dd-brick-500: #B9583A;
+  --dd-brick-700: #8A3D27;
+  --dd-yellow-300: #FBE08A;
+  --dd-yellow-500: #F4C63F;
+  --dd-yellow-700: #B98C12;
+  --dd-green-100: #E1F0D6;
+  --dd-green-600: #3F8F3E;
+  --dd-green-800: #2B652B;
+  --dd-ink-900: #1D2A2F;
+  --dd-ink-700: #33464C;
+  --dd-ink-500: #5E7479;
+  --dd-ink-300: #9DB0B4;
+  --dd-ink-100: #DCE7E9;
+  --dd-surface: #FFFFFF;
+  --dd-surface-2: #F1F7F8;
+  --dd-ground: #E4EFF0;
+  --dd-scrim: rgba(16, 28, 32, 0.62);
+  --dd-grass-500: #7FA85A;
+  --dd-grass-700: #5E8741;
+  --dd-asphalt: #2B2E2C;
+  --dd-curb: #9A9B92;
+  --dd-lane: #EFE9D6;
+  --dd-parking: #3DA8F2;
+  --dd-text: var(--dd-ink-900);
+  --dd-text-muted: var(--dd-ink-500);
+  --dd-text-on-fill: var(--dd-surface);
+  --dd-primary: var(--dd-cyan-600);
+  --dd-primary-edge: var(--dd-cyan-700);
+  --dd-reward: var(--dd-orange-500);
+  --dd-reward-edge: var(--dd-orange-700);
+  --dd-danger: var(--dd-brick-500);
+  --dd-danger-edge: var(--dd-brick-700);
+  --dd-success: var(--dd-green-600);
+  --dd-success-edge: var(--dd-green-800);
+  --dd-highlight: var(--dd-yellow-500);
+  --dd-disabled: var(--dd-ink-100);
+  --dd-disabled-edge: var(--dd-ink-300);
+  --dd-disabled-text: var(--dd-ink-500);
+  --dd-card: var(--dd-surface);
+  --dd-card-line: var(--dd-ink-100);
+  --dd-card-edge: var(--dd-ink-300);
+  --dd-toast: var(--dd-ink-900);
+  --dd-radius-sm: 12px;
+  --dd-radius-md: 18px;
+  --dd-radius-lg: 26px;
+  --dd-radius-pill: 999px;
+  --dd-space-1: 4px;
+  --dd-space-2: 8px;
+  --dd-space-3: 12px;
+  --dd-space-4: 16px;
+  --dd-space-5: 24px;
+  --dd-space-6: 32px;
+  --dd-space-7: 48px;
+  --dd-edge-button: 6px;
+  --dd-edge-button-pressed: 2px;
+  --dd-edge-card: 8px;
+  --dd-edge-chip: 3px;
+  --dd-touch-min: 72px;
+  --dd-button-h: 72px;
+  --dd-icon-button: 72px;
+  --dd-chip-h: 48px;
+  --dd-hud-bar-h: 64px;
+  --dd-title-size: 44px;
+  --dd-heading-size: 32px;
+  --dd-button-size: 28px;
+  --dd-number-size: 28px;
+  --dd-body-l-size: 26px;
+  --dd-body-size: 22px;
+  --dd-label-size: 22px;
+}
+/* ---------- Kesetaraan galeri → Unity ---------- */
+.unity-label {
+  white-space: normal;
+  margin: 0;
+  padding: 0;
+}
+

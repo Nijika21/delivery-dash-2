@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 04. Pilih kota (portrait 720x1280) — dibangkitkan dari Design/d4, jangan disunting tangan.
+     ID inventaris: A13 K10 K11
+     Catatan: Ketuk kartu = pilih dan tutup. Kota terakhir diingat. Classic membuka lobby 1.0. -->
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../Styles/DeliveryDash.uss" />
+    <ui:VisualElement name="layar" class="sc sc--p" picking-mode="Ignore">
+        <!-- dunia: digambar kamera game, bukan UI (acuan: a-w-lobi-p) -->
+        <ui:VisualElement name="@grup-1" class="sc-abs sc-row" style="left: 20px; top: 20px; align-items: center" picking-mode="Ignore">
+            <ui:VisualElement name="coins" class="dd-coins" picking-mode="Ignore">
+                <ui:VisualElement name="ikon-coin" class="dd-coins__icon ikon ikon--i-coin" picking-mode="Ignore" />
+                <ui:Label name="teks" text="312" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:VisualElement name="@chip:box" class="ml-12" picking-mode="Ignore">
+                <ui:VisualElement name="chip:box" class="dd-chip" picking-mode="Ignore">
+                    <ui:VisualElement name="ikon-box" class="dd-chip__icon ikon ikon--i-box" picking-mode="Ignore" />
+                    <ui:Label name="teks" text="27" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@grup-2" class="sc-abs sc-row" style="right: 20px; top: 20px" picking-mode="Ignore">
+            <ui:VisualElement name="iconbtn:help" class="dd-iconbtn">
+                <ui:VisualElement name="ikon-help" class="dd-iconbtn__glyph ikon ikon--i-help" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:VisualElement name="@iconbtn:gear" class="ml-12" picking-mode="Ignore">
+                <ui:VisualElement name="iconbtn:gear" class="dd-iconbtn">
+                    <ui:VisualElement name="ikon-gear" class="dd-iconbtn__glyph ikon ikon--i-gear" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="logo" class="sc-abs sc-logo logo" style="left: 145px; top: 78px; width: 430px; height: 184px" picking-mode="Ignore" />
+        <ui:VisualElement name="@side:garasi" class="sc-abs" style="left: 20px; top: 1040px" picking-mode="Ignore">
+            <ui:VisualElement name="side:garasi" class="sc-side" picking-mode="Ignore">
+                <ui:VisualElement name="btn" class="sc-side__btn" style="position: relative">
+                    <ui:VisualElement name="ikon-garage" class="sc-side__glyph ikon ikon--i-garage" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Label name="label" class="sc-side__label" text="Garasi" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@side:hadiah" class="sc-abs" style="left: 588px; top: 1040px" picking-mode="Ignore">
+            <ui:VisualElement name="side:hadiah" class="sc-side" picking-mode="Ignore">
+                <ui:VisualElement name="btn" class="sc-side__btn" style="position: relative">
+                    <ui:VisualElement name="ikon-gift" class="sc-side__glyph ikon ikon--i-gift" picking-mode="Ignore" />
+                    <ui:VisualElement name="dot" class="sc-dot" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Label name="label" class="sc-side__label" text="Hadiah" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@modebtn" class="sc-abs" style="left: 152px; top: 992px" picking-mode="Ignore">
+            <ui:VisualElement name="modebtn" class="sc-modebtn" style="width: 416px">
+                <ui:VisualElement name="thumb" class="sc-bg sc-modebtn__thumb a-mini-kp" picking-mode="Ignore" />
+                <ui:VisualElement name="text" class="sc-modebtn__text" picking-mode="Ignore">
+                    <ui:Label name="small" class="sc-modebtn__small" text="Kota" picking-mode="Ignore" />
+                    <ui:Label name="name" class="sc-modebtn__name" text="Kota Paket" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:VisualElement name="ikon-chev" class="sc-modebtn__chev ikon ikon--i-chev" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@btn:mulai" class="sc-abs" style="left: 152px; top: 1104px" picking-mode="Ignore">
+            <ui:VisualElement name="btn:mulai" class="dd-btn dd-btn--reward sc-play" style="width: 416px">
+                <ui:VisualElement name="ikon-play" class="dd-btn__icon ikon ikon--i-play" picking-mode="Ignore" />
+                <ui:Label name="teks" text="Mulai" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="scrim" class="sc-fill dd-scrim">
+            <ui:VisualElement name="dialog:pilih-kota" class="dd-dialog" style="position: relative; width: 640px" picking-mode="Ignore">
+                <ui:VisualElement name="close" class="sc-close" picking-mode="Ignore">
+                    <ui:VisualElement name="iconbtn:close" class="dd-iconbtn dd-iconbtn--close">
+                        <ui:VisualElement name="ikon-close" class="dd-iconbtn__glyph ikon ikon--i-close" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Label name="title" class="dd-dialog__title" text="Pilih kota" picking-mode="Ignore" />
+                <ui:VisualElement name="@grup" class="sc-col" style="margin-top: 8px; justify-content: center; width: 100%" picking-mode="Ignore">
+                    <ui:VisualElement name="mapcard:kota-paket" class="sc-mapcard sc-mapcard--row is-selected" style="width: 100%; margin-top: 14px">
+                        <ui:VisualElement name="img" class="sc-bg sc-mapcard__img a-mini-kp" style="width: 150px; height: 112px; background-size: 100% auto; background-position: 50% 45%" picking-mode="Ignore" />
+                        <ui:VisualElement name="@grup" class="sc-col" style="margin-left: 18px; flex-grow: 1" picking-mode="Ignore">
+                            <ui:Label name="name" class="sc-mapcard__name" text="Kota Paket" picking-mode="Ignore" />
+                            <ui:Label name="desc" class="sc-mapcard__desc" text="Kota besar, jalan berkelok" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="mapcard:blok-paket" class="sc-mapcard sc-mapcard--row" style="width: 100%; margin-top: 14px">
+                        <ui:VisualElement name="img" class="sc-bg sc-mapcard__img a-mini-bp" style="width: 150px; height: 112px; background-size: 100% auto; background-position: 50% 45%" picking-mode="Ignore" />
+                        <ui:VisualElement name="@grup" class="sc-col" style="margin-left: 18px; flex-grow: 1" picking-mode="Ignore">
+                            <ui:Label name="name" class="sc-mapcard__name" text="Blok Paket" picking-mode="Ignore" />
+                            <ui:Label name="desc" class="sc-mapcard__desc" text="Jalan lurus, blok rapi" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="mapcard:classic" class="sc-mapcard sc-mapcard--row" style="width: 100%; margin-top: 14px">
+                        <ui:VisualElement name="img" class="sc-mapcard__img sc-classic" style="width: 150px; height: 112px; align-items: center; justify-content: center" picking-mode="Ignore">
+                            <ui:VisualElement name="gambar:truk" class="sc-bg a-truk" style="width: 34px; height: 72px; rotate: 90deg" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="@grup" class="sc-col" style="margin-left: 18px; flex-grow: 1" picking-mode="Ignore">
+                            <ui:Label name="name" class="sc-mapcard__name" text="Classic" picking-mode="Ignore" />
+                            <ui:Label name="desc" class="sc-mapcard__desc" text="Game pertama, versi 1.0" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

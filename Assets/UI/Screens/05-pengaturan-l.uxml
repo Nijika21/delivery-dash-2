@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 05. Pengaturan (landscape 1280x720) — dibangkitkan dari Design/d4, jangan disunting tangan.
+     ID inventaris: A08 A09 A10 L03 M10
+     Catatan: Suara dan keluar. Hapus progres sengaja kecil di bawah garis, jauh dari tombol lain, dan selalu minta konfirmasi. -->
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../Styles/DeliveryDash.uss" />
+    <ui:VisualElement name="layar" class="sc sc--l" picking-mode="Ignore">
+        <!-- dunia: digambar kamera game, bukan UI (acuan: a-w-lobi-l) -->
+        <ui:VisualElement name="logo" class="sc-abs sc-logo logo" style="left: 24px; top: 14px; width: 400px; height: 171px" picking-mode="Ignore" />
+        <ui:VisualElement name="@grup-1" class="sc-abs sc-row" style="right: 24px; top: 20px; align-items: center" picking-mode="Ignore">
+            <ui:VisualElement name="chip:box" class="dd-chip" picking-mode="Ignore">
+                <ui:VisualElement name="ikon-box" class="dd-chip__icon ikon ikon--i-box" picking-mode="Ignore" />
+                <ui:Label name="teks" text="27" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:VisualElement name="@coins" class="ml-12" picking-mode="Ignore">
+                <ui:VisualElement name="coins" class="dd-coins" picking-mode="Ignore">
+                    <ui:VisualElement name="ikon-coin" class="dd-coins__icon ikon ikon--i-coin" picking-mode="Ignore" />
+                    <ui:Label name="teks" text="312" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="@iconbtn:help" class="ml-16" picking-mode="Ignore">
+                <ui:VisualElement name="iconbtn:help" class="dd-iconbtn">
+                    <ui:VisualElement name="ikon-help" class="dd-iconbtn__glyph ikon ikon--i-help" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="@iconbtn:gear" class="ml-12" picking-mode="Ignore">
+                <ui:VisualElement name="iconbtn:gear" class="dd-iconbtn">
+                    <ui:VisualElement name="ikon-gear" class="dd-iconbtn__glyph ikon ikon--i-gear" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@grup-2" class="sc-abs" style="left: 24px; top: 226px" picking-mode="Ignore">
+            <ui:VisualElement name="side:garasi" class="sc-side" picking-mode="Ignore">
+                <ui:VisualElement name="btn" class="sc-side__btn" style="position: relative">
+                    <ui:VisualElement name="ikon-garage" class="sc-side__glyph ikon ikon--i-garage" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Label name="label" class="sc-side__label" text="Garasi" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:VisualElement name="jarak" class="mt-16" picking-mode="Ignore" />
+            <ui:VisualElement name="side:hadiah" class="sc-side" picking-mode="Ignore">
+                <ui:VisualElement name="btn" class="sc-side__btn" style="position: relative">
+                    <ui:VisualElement name="ikon-gift" class="sc-side__glyph ikon ikon--i-gift" picking-mode="Ignore" />
+                    <ui:VisualElement name="dot" class="sc-dot" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Label name="label" class="sc-side__label" text="Hadiah" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@modebtn" class="sc-abs" style="right: 24px; bottom: 148px" picking-mode="Ignore">
+            <ui:VisualElement name="modebtn" class="sc-modebtn" style="width: 320px">
+                <ui:VisualElement name="thumb" class="sc-bg sc-modebtn__thumb a-mini-kp" picking-mode="Ignore" />
+                <ui:VisualElement name="text" class="sc-modebtn__text" picking-mode="Ignore">
+                    <ui:Label name="small" class="sc-modebtn__small" text="Kota" picking-mode="Ignore" />
+                    <ui:Label name="name" class="sc-modebtn__name" text="Kota Paket" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:VisualElement name="ikon-chev" class="sc-modebtn__chev ikon ikon--i-chev" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@btn:mulai" class="sc-abs" style="right: 24px; bottom: 28px" picking-mode="Ignore">
+            <ui:VisualElement name="btn:mulai" class="dd-btn dd-btn--reward sc-play" style="width: 320px">
+                <ui:VisualElement name="ikon-play" class="dd-btn__icon ikon ikon--i-play" picking-mode="Ignore" />
+                <ui:Label name="teks" text="Mulai" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="scrim" class="sc-fill dd-scrim">
+            <ui:VisualElement name="dialog:pengaturan" class="dd-dialog" style="position: relative; width: 560px; padding-bottom: 16px" picking-mode="Ignore">
+                <ui:VisualElement name="close" class="sc-close" picking-mode="Ignore">
+                    <ui:VisualElement name="iconbtn:close" class="dd-iconbtn dd-iconbtn--close">
+                        <ui:VisualElement name="ikon-close" class="dd-iconbtn__glyph ikon ikon--i-close" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Label name="title" class="dd-dialog__title" text="Pengaturan" picking-mode="Ignore" />
+                <ui:VisualElement name="set" class="sc-set" picking-mode="Ignore">
+                    <ui:VisualElement name="row:suara" class="sc-set__row">
+                        <ui:VisualElement name="ikon-sound" class="sc-set__icon ikon ikon--i-sound" picking-mode="Ignore" />
+                        <ui:Label name="label" class="sc-set__label" text="Suara" picking-mode="Ignore" />
+                        <ui:VisualElement name="toggle" class="dd-toggle is-on">
+                            <ui:VisualElement name="knob" class="dd-toggle__knob" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="row:keluar-game" class="sc-set__row">
+                        <ui:VisualElement name="ikon-exit" class="sc-set__icon ikon ikon--i-exit" picking-mode="Ignore" />
+                        <ui:Label name="label" class="sc-set__label" text="Keluar game" picking-mode="Ignore" />
+                        <ui:VisualElement name="ikon-chev" class="sc-set__chev ikon ikon--i-chev" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="rule" class="sc-set__rule" picking-mode="Ignore" />
+                    <ui:VisualElement name="danger:hapus-semua-progres" class="sc-set__danger">
+                        <ui:VisualElement name="ikon-trash" class="sc-set__icon ikon ikon--i-trash" picking-mode="Ignore" />
+                        <ui:Label name="teks" text="Hapus semua progres" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

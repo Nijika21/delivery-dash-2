@@ -1,0 +1,54 @@
+# ── Hasil generate Unity (dibuat ulang otomatis, jangan dilacak) ──
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/Assets/AssetStoreTools*
+sysinfo.txt
+crashlytics-build.properties
+
+# ── IDE dan file sistem ──
+/.vs/
+/.idea/
+/.vscode/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# ── Hasil build (APK/AAB tidak pernah masuk repo; rilis lewat GitHub Releases) ──
+/[Bb]uild/
+/[Bb]uilds/
+*.apk
+*.aab
+*.unitypackage
+
+# ── Kunci tanda tangan dan rahasia (selalu lokal) ──
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+.env
+.env.*
+/.private/
+
+# ── Alat dev ──
+/Tools/node_modules/
+
+# ── Materi tutorial pihak ketiga: tetap di disk, tidak masuk riwayat git publik ──
+/*.pdf
+
+# Graf pengetahuan kode (graphify), dibangun ulang dengan `graphify update .`
+/graphify-out/

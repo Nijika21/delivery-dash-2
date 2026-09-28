@@ -1,0 +1,9 @@
+{
+  "name": "delivery-dash-tools",
+  "private": true,
+  "type": "module",
+  "description": "Alat dev: baker kota, render SVG ke PNG, token desain. Tidak ikut ke build game.",
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
+}

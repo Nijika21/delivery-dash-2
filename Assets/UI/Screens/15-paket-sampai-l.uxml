@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 15. Paket sampai (landscape 1280x720) — dibangkitkan dari Design/d4, jangan disunting tangan.
+     ID inventaris: G05 H05 D06
+     Catatan: Paket melompat ke pintu, koin bertambah. Petunjuk berikutnya langsung ke gudang. -->
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../Styles/DeliveryDash.uss" />
+    <ui:VisualElement name="layar" class="sc sc--l" picking-mode="Ignore">
+        <!-- dunia: digambar kamera game, bukan UI (acuan: a-w-terkirim-l) -->
+        <ui:VisualElement name="@hudbar" class="sc-abs" style="left: 24px; top: 20px; width: 600px" picking-mode="Ignore">
+            <ui:VisualElement name="hudbar" class="dd-hudbar" style="width: 100%" picking-mode="Ignore">
+                <ui:VisualElement name="hud-dest" class="sc-bg sc-hud-dest a-zona-paket" picking-mode="Ignore" />
+                <ui:Label name="text" class="dd-hudbar__text" text="Ambil paket di gudang" picking-mode="Ignore" />
+                <ui:Label name="dist" class="dd-hudbar__dist" text="150 m" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@grup" class="sc-abs" style="right: 196px; top: 28px" picking-mode="Ignore">
+            <ui:VisualElement name="coins" class="dd-coins" picking-mode="Ignore">
+                <ui:VisualElement name="ikon-coin" class="dd-coins__icon ikon ikon--i-coin" picking-mode="Ignore" />
+                <ui:Label name="teks" text="329" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:Label name="dwell" class="sc-dwell" style="position: absolute; left: -62px; top: 12px" text="+17" picking-mode="Ignore" />
+        </ui:VisualElement>
+        <ui:VisualElement name="@iconbtn:map" class="sc-abs" style="right: 108px; top: 20px" picking-mode="Ignore">
+            <ui:VisualElement name="iconbtn:map" class="dd-iconbtn is-on">
+                <ui:VisualElement name="ikon-map" class="dd-iconbtn__glyph ikon ikon--i-map" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@iconbtn:pause" class="sc-abs" style="right: 24px; top: 20px" picking-mode="Ignore">
+            <ui:VisualElement name="iconbtn:pause" class="dd-iconbtn">
+                <ui:VisualElement name="ikon-pause" class="dd-iconbtn__glyph ikon ikon--i-pause" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="mini" class="sc-mini" style="right: 24px; top: 112px; width: 232px; height: 235px">
+            <ui:VisualElement name="map" class="sc-mini__map sc-bg a-mini-kp" style="left: -244.2px; top: -742.2px; width: 960px; height: 960px" picking-mode="Ignore" />
+            <ui:VisualElement name="peta-overlay" class="sc-mini__overlay runtime runtime--peta-overlay" picking-mode="Ignore" tooltip="Digambar saat berjalan: titik rute, penanda tujuan, dan panah truk di atas gambar minimap (DeliveryMinimap)." />
+            <ui:VisualElement name="hint" class="sc-mini__hint" picking-mode="Ignore">
+                <ui:VisualElement name="ikon-expand" class="sc-mini__hint-glyph ikon ikon--i-expand" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@msg" class="sc-abs sc-row" style="left: 300px; right: 316px; bottom: 36px; justify-content: center; align-items: center" picking-mode="Ignore">
+            <ui:VisualElement name="msg" class="dd-msg dd-msg--good" picking-mode="Ignore">
+                <ui:VisualElement name="badge" class="dd-msg__badge" picking-mode="Ignore">
+                    <ui:VisualElement name="ikon-check" class="dd-msg__glyph ikon ikon--i-check" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Label name="teks" text="Paket sampai! +12 koin dan bonus +5 koin." picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ctl:left" class="sc-abs sc-ctl" style="left: 24px; bottom: 24px">
+            <ui:VisualElement name="ikon-left" class="sc-ctl__glyph ikon ikon--i-left" picking-mode="Ignore" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ctl:right" class="sc-abs sc-ctl" style="left: 160px; bottom: 24px">
+            <ui:VisualElement name="ikon-right" class="sc-ctl__glyph ikon ikon--i-right" picking-mode="Ignore" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ctl:rem" class="sc-abs sc-ctl sc-ctl--rem" style="right: 172px; bottom: 24px">
+            <ui:VisualElement name="ikon-rem" class="sc-ctl__glyph ikon ikon--i-rem" picking-mode="Ignore" />
+            <ui:Label name="label" class="sc-ctl__label" text="REM" picking-mode="Ignore" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ctl:gas" class="sc-abs sc-ctl sc-ctl--gas" style="right: 24px; bottom: 24px">
+            <ui:VisualElement name="ikon-gas" class="sc-ctl__glyph ikon ikon--i-gas" picking-mode="Ignore" />
+            <ui:Label name="label" class="sc-ctl__label" text="GAS" picking-mode="Ignore" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

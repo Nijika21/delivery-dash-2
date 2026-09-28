@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 11. Paket ekspres, minimap tertutup (portrait 720x1280) — dibangkitkan dari Design/d4, jangan disunting tangan.
+     ID inventaris: H02 H07 E02 E11
+     Catatan: Waktu ekspres jadi chip besar. Minimap dimatikan: panah tujuan di dunia menggantikannya. -->
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../Styles/DeliveryDash.uss" />
+    <ui:VisualElement name="layar" class="sc sc--p" picking-mode="Ignore">
+        <!-- dunia: digambar kamera game, bukan UI (acuan: a-w-ekspres-p) -->
+        <ui:VisualElement name="@hudbar" class="sc-abs" style="left: 20px; top: 20px; width: 596px" picking-mode="Ignore">
+            <ui:VisualElement name="hudbar" class="dd-hudbar" style="width: 100%" picking-mode="Ignore">
+                <ui:VisualElement name="ikon-house" class="sc-hud-dest ikon ikon--i-house" picking-mode="Ignore" />
+                <ui:Label name="text" class="dd-hudbar__text" text="Jalan Puncak 1" picking-mode="Ignore" />
+                <ui:Label name="dist" class="dd-hudbar__dist" text="75 m" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@iconbtn:pause" class="sc-abs" style="right: 20px; top: 16px" picking-mode="Ignore">
+            <ui:VisualElement name="iconbtn:pause" class="dd-iconbtn">
+                <ui:VisualElement name="ikon-pause" class="dd-iconbtn__glyph ikon ikon--i-pause" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@chips" class="sc-abs" style="left: 20px; top: 104px" picking-mode="Ignore">
+            <ui:VisualElement name="chips" class="sc-chips" picking-mode="Ignore">
+                <ui:VisualElement name="coins" class="dd-coins" picking-mode="Ignore">
+                    <ui:VisualElement name="ikon-coin" class="dd-coins__icon ikon ikon--i-coin" picking-mode="Ignore" />
+                    <ui:Label name="teks" text="312" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:VisualElement name="chip:bolt" class="dd-chip dd-chip--bolt" picking-mode="Ignore">
+                    <ui:VisualElement name="ikon-bolt" class="dd-chip__icon ikon ikon--i-bolt" picking-mode="Ignore" />
+                    <ui:Label name="teks" text="Ekspres" picking-mode="Ignore" />
+                    <ui:Label name="dwell" class="sc-dwell" text="0:38" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="@msg" class="sc-abs sc-row" style="left: 20px; right: 20px; top: 312px; justify-content: center; align-items: center" picking-mode="Ignore">
+            <ui:VisualElement name="msg" class="dd-msg dd-msg--warn" picking-mode="Ignore">
+                <ui:VisualElement name="badge" class="dd-msg__badge" picking-mode="Ignore">
+                    <ui:VisualElement name="ikon-warn" class="dd-msg__glyph ikon ikon--i-warn" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:Label name="teks" text="Paket ekspres: 45 dtk untuk bonus +5" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="joy" class="sc-abs sc-joy" style="left: 92px; top: 922px" picking-mode="Ignore">
+            <ui:VisualElement name="knob" class="sc-joy__knob" style="left: 45px; top: 87px" picking-mode="Ignore" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,169 @@
+{
+ "pesan": {
+  "mulai.tutorial": {
+   "teks": "Yuk belajar! Berhenti di kotak jingga depan gudang untuk mengambil paket.",
+   "jenis": "info",
+   "detik": 7,
+   "pemicu": "ResetRun, tutorial belum selesai"
+  },
+  "mulai.biasa": {
+   "teks": "Berhenti di kotak jingga depan gudang untuk mengambil paket.",
+   "jenis": "info",
+   "detik": 7,
+   "pemicu": "ResetRun, bukan tutorial"
+  },
+  "paket.siap": {
+   "teks": "Paket siap! Ikuti petunjuk menuju rumah.",
+   "jenis": "info",
+   "detik": 6,
+   "pemicu": "Paket diambil, perjalanan biasa"
+  },
+  "paket.siap.tutorial": {
+   "teks": "Antar ke rumah bertanda biru. Ikuti panah petunjuk!",
+   "jenis": "info",
+   "detik": 6,
+   "pemicu": "Paket diambil, perjalanan tutorial"
+  },
+  "ekspres.mulai": {
+   "teks": "Paket ekspres: {detik} dtk untuk bonus +5",
+   "jenis": "warn",
+   "detik": 6,
+   "pemicu": "Paket diambil, aktivitas ekspres (detik = batas awal, dibulatkan ke atas)"
+  },
+  "rapuh.mulai": {
+   "teks": "Jangan menabrak! Bonus +5 jika kurang dari 3 benturan.",
+   "jenis": "warn",
+   "detik": 6,
+   "pemicu": "Paket diambil, aktivitas rapuh"
+  },
+  "singgah.mulai": {
+   "teks": "Bonus +5: berhenti di lingkaran {jalan} sampai penuh, lalu antar paket.",
+   "jenis": "info",
+   "detik": 6,
+   "pemicu": "Paket diambil, aktivitas singgah"
+  },
+  "sampai.biasa": {
+   "teks": "Paket sampai! +12 koin.",
+   "jenis": "good",
+   "detik": 6,
+   "pemicu": "Paket sampai, tanpa aktivitas bonus"
+  },
+  "sampai.bonus": {
+   "teks": "Paket sampai! +12 koin dan bonus +5 koin.",
+   "jenis": "good",
+   "detik": 6,
+   "pemicu": "Paket sampai, bonus aktivitas berhasil"
+  },
+  "sampai.tanpaBonus": {
+   "teks": "Paket sampai! +12 koin. Bonusnya bisa dicoba lagi nanti.",
+   "jenis": "good",
+   "detik": 6,
+   "pemicu": "Paket sampai, bonus aktivitas gagal"
+  },
+  "sampai.tutorial": {
+   "teks": "Berhasil! +12 koin. Sekarang kembali ke gudang untuk paket berikutnya.",
+   "jenis": "good",
+   "detik": 6,
+   "pemicu": "Paket tutorial sampai"
+  },
+  "bintang": {
+   "teks": "Dapat satu bintang!",
+   "jenis": "good",
+   "detik": 2.5,
+   "pemicu": "Bintang diambil"
+  },
+  "bintang.lengkap": {
+   "teks": "Semua bintang terkumpul! Bonus +2 koin",
+   "jenis": "good",
+   "detik": 2.5,
+   "pemicu": "Bintang terakhir di rute diambil"
+  },
+  "kilat": {
+   "teks": "Lebih cepat selama 4 detik!",
+   "jenis": "info",
+   "detik": 2.5,
+   "pemicu": "Kilat diambil"
+  },
+  "perisai": {
+   "teks": "Pelindung paket! Satu benturan berikutnya tidak mengurangi bonus.",
+   "jenis": "good",
+   "detik": 2.5,
+   "pemicu": "Perisai diambil"
+  },
+  "rapuh.habis": {
+   "teks": "Bonus habis. Paket tetap boleh diantar.",
+   "jenis": "warn",
+   "detik": 2.5,
+   "pemicu": "Benturan ke-3 paket rapuh"
+  },
+  "ekspres.habis": {
+   "teks": "Waktu bonus habis. Tetap antar paketnya, ya!",
+   "jenis": "warn",
+   "detik": 2.5,
+   "pemicu": "Sisa waktu ekspres mencapai 0"
+  },
+  "singgah.selesai": {
+   "teks": "Sudah berhenti! Sekarang antar paket ke rumah.",
+   "jenis": "good",
+   "detik": 2.5,
+   "pemicu": "Lingkar singgah penuh"
+  },
+  "surat.tawar": {
+   "teks": "Bantu antar surat? Berhenti di lingkaran sampai penuh. +8 koin",
+   "jenis": "info",
+   "detik": null,
+   "pemicu": "Selama truk < 5 m dari tawaran surat (petunjuk tetap)"
+  },
+  "istirahat.tawar": {
+   "teks": "Mau istirahat? Berhenti di lingkaran sampai penuh. +4 koin",
+   "jenis": "info",
+   "detik": null,
+   "pemicu": "Selama truk < 5 m dari tawaran istirahat (petunjuk tetap)"
+  },
+  "surat.dibawa": {
+   "teks": "Surat dibawa! Antar ke lingkaran biru di kanan depan gudang.",
+   "jenis": "info",
+   "detik": 2.5,
+   "pemicu": "Surat diambil",
+   "catatan": "Teks disetujui di Gerbang Desain 4, tapi letak \"kanan depan gudang\" berasal dari kota lama. Di Kota Paket, titik taruh surat = kotak surat depan gudang (anchor). Usul: \"Surat dibawa! Antar ke kotak surat depan gudang.\""
+  },
+  "surat.antar": {
+   "teks": "Bawa surat ke lingkaran biru di kanan depan gudang. Berhenti di sana.",
+   "jenis": "info",
+   "detik": null,
+   "pemicu": "Selama membawa surat (petunjuk tetap)",
+   "catatan": "ikut keputusan surat.letak"
+  },
+  "surat.sampai": {
+   "teks": "Surat sampai! Terima kasih. +8 koin",
+   "jenis": "good",
+   "detik": 2.5,
+   "pemicu": "Surat ditaruh"
+  },
+  "istirahat.selesai": {
+   "teks": "Siap jalan lagi! +4 koin dan lebih cepat 4 detik.",
+   "jenis": "good",
+   "detik": 2.5,
+   "pemicu": "Lingkar istirahat penuh"
+  },
+  "selesai.boleh": {
+   "teks": "Boleh selesai! Berhenti di kotak parkir biru.",
+   "jenis": "good",
+   "detik": 4,
+   "pemicu": "Selesai kerja diminta, tidak ada paket/surat"
+  },
+  "selesai.belum": {
+   "teks": "Selesaikan pengantaran dahulu.",
+   "jenis": "warn",
+   "detik": 4,
+   "pemicu": "Selesai kerja diminta, masih membawa paket/surat (sesudah kartu sorotan kuning)"
+  },
+  "pulihkan": {
+   "teks": "Mobil kembali ke halaman. Paketmu tetap aman.",
+   "jenis": "info",
+   "detik": 3,
+   "pemicu": "\"Bantu ke halaman gudang\" di menu jeda"
+  }
+ },
+ "skin": []
+}
